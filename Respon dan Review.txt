@@ -1,0 +1,27 @@
+Admin
+1. Harusnya option cancel itu ada di data baki, bukan di input baki
+2. Halaman data baki harusnya diatas menggunakan sorting tanggal,
+apabila mau ada sorting baki, seharusnya di table juga ditampilkan
+nilai baki (mungkin lupa)
+==========================================
+Sales
+1. Tidak perlu ada Main page, jadikan side-bar seperti di Admin
+2. Halaman nota penjualan, di bawah gambar ada barcode nota.
+gw blm faham cara kerja barcode (belum pernah ngulik sbenernya)
+apakah dia ada generator sendiri atau gimana, apakah barcode
+di save di database ?
+3.Halaman gadai, ada baiknya kita simpen foto orang yang gadai
+dan data2 pribadi nya seperti fotocopy KTP (just in case berbahaya).
+===========================================
+Owner
+1. Halaan laporan pembelian, grafik, print dan show nota pembelian di masukan
+ke kolom tabel aja dengan nama 'action' sebelah kolom sales
+|	  Action	|
+|Grafik|  |Nota|  |Print|
+Halaman sebelum nya yg ada print juga lebih baik dimasukan ke dalam
+kolom Action (buat baru), dari sisi estetika lebih bagus.
+2. Buat halaman setup account yg buat user baru. kan udah ada
+Kode Account, juga ada username, nanti jadi ada 2 PK dalam database.
+mending salah satu aja.
+===========================================
+sisanya udah enak (y)

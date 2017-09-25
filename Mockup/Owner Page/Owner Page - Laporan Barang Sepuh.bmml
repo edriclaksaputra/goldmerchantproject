@@ -1,0 +1,99 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="997" measuredH="637" mockupW="654" mockupH="637">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="343" y="0" w="654" h="637" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::List" x="343" y="152" w="137" h="456" measuredW="100" measuredH="134" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <borderStyle>square</borderStyle>
+        <color>15134199</color>
+        <hasHeader>false</hasHeader>
+        <rowHeight>22</rowHeight>
+        <selectedIndex>-1</selectedIndex>
+        <text>Laporan%20Barang%0ALaporan%20Penjualan%0ALaporan%20Pembelian%0ALaporan%20Gadai%0ALaporan%20Keuangan%0ASetup</text>
+        <underline>false</underline>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="554" y="108" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>EmoticonIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::MenuBar" x="343" y="88" w="654" h="64" measuredW="73" measuredH="29" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="358" y="106" w="189" h="29" measuredW="187" measuredH="26" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Toko%20Mas%20Arjuna%20Putra</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="832" y="109" w="150" h="22" measuredW="149" measuredH="26" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Welcome%20Owner%20%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="629" y="163" w="-1" h="-1" measuredW="203" measuredH="37" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>Laporan%20Barang</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::TabBar" x="480" y="200" w="517" h="408" measuredW="431" measuredH="100" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Barang%20Dalam%2C%20Barang%20Baki%2C%20Barang%20Sepuh%2C%20Barang%20Rongsok</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::DataGrid" x="497" y="279" w="475" h="250" measuredW="327" measuredH="83" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tanggal%20Masuk%20%5Ev%2C%20Kode%20Barang%2C%20Jenis%2C%20Berat%20%5Ev%0A15%20Sept%202017%2C%20GL-001%2C%20Gelang%2C%201.050%20Gr%0A12%20Sept%202017%2C%20KL-002%2C%20Kalung%2C%203%20Gr</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="497" y="243" w="46" h="21" measuredW="46" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Filter%20%3A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Button" x="731" y="240" w="77" h="27" measuredW="73" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Proceed</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Button" x="889" y="567" w="-1" h="-1" measuredW="93" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Print%20Report</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::RoundButton" x="673" y="200" w="104" h="32" measuredW="32" measuredH="32" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <borderColor>13369344</borderColor>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::ComboBox" x="648" y="242" w="-1" h="-1" measuredW="63" measuredH="23" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Jenis</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::DateChooser" x="539" y="241" w="-1" h="-1" measuredW="90" measuredH="25" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Label" x="801" y="529" w="-1" h="-1" measuredW="70" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Berat</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::TextInput" x="879" y="526" w="-1" h="-1" measuredW="79" measuredH="27" zOrder="16" locked="false" isInGroup="-1"/>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::Label" x="958" y="529" w="-1" h="-1" measuredW="21" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Gr</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
