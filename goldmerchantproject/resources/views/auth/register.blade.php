@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('job') ? ' has-error' : '' }}">
+                            <label for="job" class="col-md-4 control-label">Job</label>
+
+                            <div class="col-md-6">
+                                <input id="job" type="text" class="form-control" name="job" required>
+
+                                @if ($errors->has('job'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('job') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
