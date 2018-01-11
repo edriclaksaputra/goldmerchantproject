@@ -1,96 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>Gold Merchant | Admin</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- MetisMenu CSS -->
-        <link href="../css/metisMenu.min.css" rel="stylesheet">
-
-        <!-- DataTables CSS -->
-        <link href="../css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-
-        <!-- DataTables Responsive CSS -->
-        <link href="../css/dataTables/dataTables.responsive.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="../css/startmin.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-
-        <div id="wrapper">
-
-            <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html" style="color: white">Toko Mas Arjuna Putra</a>
-                </div>
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <ul class="nav navbar-right navbar-top-links">
-                    <li style="color: white"><i class="fa fa-home fa-fw"></i>Welcome Admin !</li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-sign-out"></i>logout
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.navbar-top-links -->
-
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-                            <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                                </div>
-                                <!-- /input-group -->
-                            </li>
-                            <li>
-                                <a href="inputBaru.html"><i class="fa fa-plus"></i> Input Barang Baru</a>
-                            </li>
-                            <li>
-                                <a href="inputBaki.html"><i class="fa fa-location-arrow"></i> Input Baki</a>
-                            </li>
-                            <li>
-                                <a href="dataBaki.html"><i class="fa fa-table fa-fw"></i> Data Baki</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.sidebar-collapse -->
-                </div>
-                <!-- /.navbar-static-side -->
-            </nav>
-
+@include('admin.layouts.header')
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
@@ -109,82 +17,6 @@
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <div class="col-lg-12">
-                                            <div class="col-lg-6">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="panel-heading col-lg-4">
-                                                            Tanggal
-                                                        </div>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" name="stokLimit" value="26-Sep-2017">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="panel-heading col-sm-4">
-                                                            Baki
-                                                        </div>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" name="stokLimit" value="02">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="panel-heading col-sm-4">
-                                                            Barcode
-                                                        </div>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" name="stokLimit" value="0011010100100110">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="panel-heading col-lg-5">
-                                                            Stok Limit :
-                                                        </div>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" name="stokLimit" value="35">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="panel-heading col-lg-5">
-                                                            Barang Terjual :
-                                                        </div>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" name="stokLimit" value="15">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="panel-heading col-lg-5">
-                                                            Barang yang Harus Diisi :
-                                                        </div>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" name="stokLimit" value="20">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="col-lg-4 text-center">
-                                            </div>
-                                            <div class="col-lg-4 text-center">
-                                                <button type="button" class="btn btn-success btn-block">Proceed</button>
-                                            </div>
-                                            <div class="col-lg-4 text-center">
-                                            </div>
-                                            <br/><br/><br/>
-                                        </div>
                                         <thead>
                                             <tr>
                                                 <th>Tanggal Keluar</th>
@@ -192,7 +24,6 @@
                                                 <th>Jenis</th>
                                                 <th>Nama</th>
                                                 <th>Berat</th>
-                                                <th>Cancel</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -202,7 +33,6 @@
                                                 <td>Win 95+</td>
                                                 <td class="center">4</td>
                                                 <td class="center">X</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="even gradeC">
                                                 <td>03-Sep-2017</td>
@@ -210,7 +40,6 @@
                                                 <td>Win 95+</td>
                                                 <td class="center">5</td>
                                                 <td class="center">C</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="odd gradeA">
                                                 <td>03-Sep-2017</td>
@@ -218,7 +47,6 @@
                                                 <td>Win 95+</td>
                                                 <td class="center">5.5</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="even gradeA">
                                                 <td>03-Sep-2017</td>
@@ -226,7 +54,6 @@
                                                 <td>Win 98+</td>
                                                 <td class="center">6</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="odd gradeA">
                                                 <td>03-Sep-2017</td>
@@ -234,7 +61,6 @@
                                                 <td>Win XP SP2+</td>
                                                 <td class="center">7</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="even gradeA">
                                                 <td>03-Sep-2017</td>
@@ -242,7 +68,6 @@
                                                 <td>Win XP</td>
                                                 <td class="center">6</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -250,7 +75,6 @@
                                                 <td>Win 98+ / OSX.2+</td>
                                                 <td class="center">1.7</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -258,7 +82,6 @@
                                                 <td>Win 98+ / OSX.2+</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -266,7 +89,6 @@
                                                 <td>Win 98+ / OSX.2+</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -274,7 +96,6 @@
                                                 <td>Win 2k+ / OSX.3+</td>
                                                 <td class="center">1.9</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -282,7 +103,6 @@
                                                 <td>OSX.2+</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -290,7 +110,6 @@
                                                 <td>OSX.3+</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -298,7 +117,6 @@
                                                 <td>Win 95+ / Mac OS 8.6-9.2</td>
                                                 <td class="center">1.7</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -306,7 +124,6 @@
                                                 <td>Win 98SE+</td>
                                                 <td class="center">1.7</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -314,7 +131,6 @@
                                                 <td>Win 98+ / OSX.2+</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -322,7 +138,6 @@
                                                 <td>Win 95+ / OSX.1+</td>
                                                 <td class="center">1</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -330,7 +145,6 @@
                                                 <td>Win 95+ / OSX.1+</td>
                                                 <td class="center">1.1</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -338,7 +152,6 @@
                                                 <td>Win 95+ / OSX.1+</td>
                                                 <td class="center">1.2</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -346,7 +159,6 @@
                                                 <td>Win 95+ / OSX.1+</td>
                                                 <td class="center">1.3</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -354,7 +166,6 @@
                                                 <td>Win 95+ / OSX.1+</td>
                                                 <td class="center">1.4</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -362,7 +173,6 @@
                                                 <td>Win 95+ / OSX.1+</td>
                                                 <td class="center">1.5</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -370,7 +180,6 @@
                                                 <td>Win 95+ / OSX.1+</td>
                                                 <td class="center">1.6</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -378,7 +187,6 @@
                                                 <td>Win 98+ / OSX.1+</td>
                                                 <td class="center">1.7</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -386,7 +194,6 @@
                                                 <td>Win 98+ / OSX.1+</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -394,7 +201,6 @@
                                                 <td>Win 98+ / OSX.2+</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>12-Aug-2017</td>
@@ -402,7 +208,6 @@
                                                 <td>Gnome</td>
                                                 <td class="center">1.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>24-Nov-2017</td>
@@ -410,7 +215,6 @@
                                                 <td>OSX.3</td>
                                                 <td class="center">125.5</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>24-Nov-2017</td>
@@ -418,7 +222,6 @@
                                                 <td>OSX.3</td>
                                                 <td class="center">312.8</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>24-Nov-2017</td>
@@ -426,7 +229,6 @@
                                                 <td>OSX.4+</td>
                                                 <td class="center">419.3</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>24-Nov-2017</td>
@@ -434,7 +236,133 @@
                                                 <td>OSX.4+</td>
                                                 <td class="center">522.1</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>24-Nov-2017</td>
+                                                <td>OmniWeb 5.5</td>
+                                                <td>OSX.4+</td>
+                                                <td class="center">420</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>24-Nov-2017</td>
+                                                <td>iPod Touch / iPhone</td>
+                                                <td>iPod</td>
+                                                <td class="center">420.1</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>24-Nov-2017</td>
+                                                <td>S60</td>
+                                                <td>S60</td>
+                                                <td class="center">413</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera 7.0</td>
+                                                <td>Win 95+ / OSX.1+</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera 7.5</td>
+                                                <td>Win 95+ / OSX.2+</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera 8.0</td>
+                                                <td>Win 95+ / OSX.2+</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera 8.5</td>
+                                                <td>Win 95+ / OSX.2+</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera 9.0</td>
+                                                <td>Win 95+ / OSX.3+</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera 9.2</td>
+                                                <td>Win 88+ / OSX.3+</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera 9.5</td>
+                                                <td>Win 88+ / OSX.3+</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Opera for Wii</td>
+                                                <td>Wii</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Nokia N800</td>
+                                                <td>N800</td>
+                                                <td class="center">-</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>30-Nov-2017</td>
+                                                <td>Nintendo DS browser</td>
+                                                <td>Nintendo DS</td>
+                                                <td class="center">8.5</td>
+                                                <td class="center">C/A<sup>1</sup>
+                                                </td>
+                                            </tr>
+                                            <tr class="gradeC">
+                                                <td>4-Dec-2017</td>
+                                                <td>Konqureror 3.1</td>
+                                                <td>KDE 3.1</td>
+                                                <td class="center">3.1</td>
+                                                <td class="center">C</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>4-Dec-2017</td>
+                                                <td>Konqureror 3.3</td>
+                                                <td>KDE 3.3</td>
+                                                <td class="center">3.3</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeA">
+                                                <td>4-Dec-2017</td>
+                                                <td>Konqureror 3.5</td>
+                                                <td>KDE 3.5</td>
+                                                <td class="center">3.5</td>
+                                                <td class="center">A</td>
+                                            </tr>
+                                            <tr class="gradeX">
+                                                <td>8-Dec-2017</td>
+                                                <td>Internet Explorer 4.5</td>
+                                                <td>Mac OS 8-9</td>
+                                                <td class="center">-</td>
+                                                <td class="center">X</td>
+                                            </tr>
+                                            <tr class="gradeC">
+                                                <td>8-Dec-2017</td>
+                                                <td>Internet Explorer 5.1</td>
+                                                <td>Mac OS 7.6-9</td>
+                                                <td class="center">1</td>
+                                                <td class="center">C</td>
                                             </tr>
                                             <tr class="gradeC">
                                                 <td>8-Dec-2017</td>
@@ -442,7 +370,6 @@
                                                 <td>Mac OS 8-X</td>
                                                 <td class="center">1</td>
                                                 <td class="center">C</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>9-Dec-2017</td>
@@ -450,7 +377,6 @@
                                                 <td>Embedded devices</td>
                                                 <td class="center">-</td>
                                                 <td class="center">C</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeA">
                                                 <td>9-Dec-2017</td>
@@ -458,7 +384,6 @@
                                                 <td>Embedded devices</td>
                                                 <td class="center">-</td>
                                                 <td class="center">A</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeX">
                                                 <td>9-Dec-2017</td>
@@ -466,7 +391,6 @@
                                                 <td>Embedded devices</td>
                                                 <td class="center">-</td>
                                                 <td class="center">X</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeX">
                                                 <td>9-Dec-2017</td>
@@ -474,7 +398,6 @@
                                                 <td>Text only</td>
                                                 <td class="center">-</td>
                                                 <td class="center">X</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeX">
                                                 <td>9-Dec-2017</td>
@@ -482,7 +405,6 @@
                                                 <td>Text only</td>
                                                 <td class="center">-</td>
                                                 <td class="center">X</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeC">
                                                 <td>9-Dec-2017</td>
@@ -490,7 +412,6 @@
                                                 <td>Windows Mobile 6</td>
                                                 <td class="center">-</td>
                                                 <td class="center">C</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                             <tr class="gradeC">
                                                 <td>9-Dec-2017</td>
@@ -498,17 +419,41 @@
                                                 <td>PSP</td>
                                                 <td class="center">-</td>
                                                 <td class="center">C</td>
-                                                <td class="center"><button type="button" class="btn btn-danger">Cancel</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <br><br>
-                                    <div class="col-lg-12 text-right">
-                                    <div class="col-lg-10"></div>
-                                        <button type="button" class="btn btn-info col-lg-2">Submit</button>
-                                    </div>
                                 </div>
                                 <!-- /.table-responsive -->
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="panel-heading col-sm-5">
+                                        Stok Limit :
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input type="text" name="stokLimit" value="35" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="panel-heading col-sm-5">
+                                        Barang Terjual :
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input type="text" name="stokLimit" value="15" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="panel-heading col-sm-5">
+                                        Barang yang Harus Diisi :
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input type="text" name="stokLimit" value="20" disabled>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.panel-body -->
                         </div>

@@ -41,7 +41,7 @@
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html" style="color: white">Toko Mas Arjuna Putra</a>
+                    <a class="navbar-brand" href="index.html" style="color: white">Arjuna Putra Gold Merchant  |  {{Auth::user()->job}}</a>
                 </div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,11 +52,24 @@
                 </button>
 
                 <ul class="nav navbar-right navbar-top-links">
-                    <li style="color: white"><i class="fa fa-home fa-fw"></i>Welcome Kasir !</li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-sign-out"></i>logout
+                    <li class="dropdown navbar-inverse">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: white">
+                            {{Auth::user()->job}}  |  {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <!-- /.navbar-top-links -->

@@ -18,3 +18,12 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
+//Route Admin
+Route::get('/inputbaru', 'AdminController@inputbarangbaru')->name('inputbarangbaru');
+Route::get('/inputbaki', 'AdminController@inputbaki')->name('inputbaki');
+Route::get('/databaki', 'AdminController@databaki')->name('databaki');
+
+//Route Kasir
+Route::get('/validasi', 'KasirController@validasi')->name('validasi');

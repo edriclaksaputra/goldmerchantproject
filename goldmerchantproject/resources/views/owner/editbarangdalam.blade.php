@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Gold Merchant | Admin</title>
+        <title>Gold Merchant | Owner</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
                 </button>
 
                 <ul class="nav navbar-right navbar-top-links">
-                    <li style="color: white"><i class="fa fa-home fa-fw"></i>Welcome Admin !</li>
+                    <li style="color: white"><i class="fa fa-home fa-fw"></i>Welcome Owner !</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-sign-out"></i>logout
@@ -76,13 +76,22 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="inputBaru.html"><i class="fa fa-plus"></i> Input Barang Baru</a>
+                                <a href="laporanBarang.html"><i class="fa fa-book"></i> Laporan Barang</a>
                             </li>
                             <li>
-                                <a href="inputBaki.html"><i class="fa fa-location-arrow"></i> Input Baki</a>
+                                <a href="laporanPenjualan.html"><i class="fa fa-bookmark"></i> Laporan Penjualan</a>
                             </li>
                             <li>
-                                <a href="dataBaki.html"><i class="fa fa-table fa-fw"></i> Data Baki</a>
+                                <a href="laporanPembelian.html"><i class="fa fa-info-circle"></i> Laporan Pembelian</a>
+                            </li>
+                             <li>
+                                <a href="laporanGadai.html"><i class="fa fa-info"></i> Laporan Gadai</a>
+                            </li>
+                             <li>
+                                <a href="laporanKeuangan.html"><i class="fa fa-copy"></i> Laporan Keuangan</a>
+                            </li>
+                             <li>
+                                <a href="settup.html"><i class="fa fa-file-text"></i> Setup</a>
                             </li>
                         </ul>
                     </div>
@@ -94,7 +103,7 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Input Barang Baru</h1>
+                        <h1 class="page-header">Gelang Rantai Variasi</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -115,26 +124,26 @@
                                             <div class="panel-body text-center">
                                                 <img alt="icon" src="../images/image.jpg" width="50%" height="50%" />
                                             </div>
-                                            <div class="panel-footer">
+                                            <!-- <div class="panel-footer">
                                                 <div class="form-group">
                                                     <label>Ambil Gambar</label>
                                                     <input type="file">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="col-lg-12 text-center">
                                             <img alt="barcode" src="../images/barcode.png" width="50%" height="50%"/>
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
-                                        <br>
-                                        <div class="row">
+                                    	<br>
+                                    	<div class="row">
                                             <div class="col-lg-12">
                                                 <div class="panel-heading col-sm-2">
                                                     Kode Barang
                                                 </div>
                                                 <div class="col-sm-1">
-                                                    <input type="text" name="stokLimit" value="26-Sep-2017">
+                                                    <input type="text" name="stokLimit" value="GL-001">
                                                 </div>
                                             </div>
                                         </div>
@@ -166,7 +175,7 @@
                                                     Nama Barang
                                                 </div>
                                                 <div class="col-sm-1">
-                                                    <input type="text" name="stokLimit" value="Rantai Variasi">
+                                                    <input type="text" name="stokLimit" value="26-Sep-2017">
                                                 </div>
                                             </div>
                                         </div>
@@ -249,8 +258,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
+                                    	</div>
+                                    	<div class="row">
                                             <div class="col-lg-12">
                                                 <div class="panel-heading col-lg-2">
                                                     Tanggal Masuk
@@ -278,11 +287,10 @@
                                         <div class="row">
                                             <div class="col-lg-12 text-right">
                                                 <div class="panel-heading col-lg-2">
-                                                    <button type="button" class="btn btn-success">Submit and Print Barcode</button>
+                                                    <button type="button" class="btn btn-success">Edit</button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- /.panel-body -->

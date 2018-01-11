@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>TB Anyar</title>
+        <title>Arjuna Gold Merchant</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -41,12 +41,20 @@
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/" style="color: white">Toko Emas Emas Arjuna</a>
+                    <a class="navbar-brand" href="index.html" style="color: white">Arjuna Putra Gold Merchant  |  {{Auth::user()->job}}</a>
                 </div>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
                 <ul class="nav navbar-right navbar-top-links">
                     <li class="dropdown navbar-inverse">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: white">
-                            {{Auth::user()->job}} || {{ Auth::user()->name }} <span class="caret"></span>
+                            {{Auth::user()->job}}  |  {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
@@ -64,7 +72,8 @@
                         </ul>
                     </li>
                 </ul>
-                
+                <!-- /.navbar-top-links -->
+
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
@@ -80,22 +89,13 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="laporanBarang.html"><i class="fa fa-book"></i> Laporan Barang</a>
+                                <a href="inputbaru"><i class="fa fa-plus"></i> Input Barang Baru</a>
                             </li>
                             <li>
-                                <a href="laporanPenjualan.html"><i class="fa fa-bookmark"></i> Laporan Penjualan</a>
+                                <a href="inputbaki"><i class="fa fa-location-arrow"></i> Input Baki</a>
                             </li>
                             <li>
-                                <a href="laporanPembelian.html"><i class="fa fa-info-circle"></i> Laporan Pembelian</a>
-                            </li>
-                             <li>
-                                <a href="laporanGadai.html"><i class="fa fa-info"></i> Laporan Gadai</a>
-                            </li>
-                             <li>
-                                <a href="laporanKeuangan.html"><i class="fa fa-copy"></i> Laporan Keuangan</a>
-                            </li>
-                             <li>
-                                <a href="settup.html"><i class="fa fa-file-text"></i> Setup</a>
+                                <a href="databaki"><i class="fa fa-table fa-fw"></i> Data Baki</a>
                             </li>
                         </ul>
                     </div>
