@@ -22,6 +22,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 //Route Admin
 Route::get('/inputbaru', 'AdminController@inputbarangbaru')->name('inputbarangbaru');
+Route::post('/inputbaru.insertbarangbaru', 'AdminController@insertbarangbaru')->name('insertbarangbaru');
 Route::get('/inputbaki', 'AdminController@inputbaki')->name('inputbaki');
 Route::get('/databaki', 'AdminController@databaki')->name('databaki');
 
