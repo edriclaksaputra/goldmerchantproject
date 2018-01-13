@@ -81,6 +81,9 @@ class AdminController extends Controller
         $idbarang = Input::get('barcode');
         $nomerbaki = Input::get('nomerbaki');
         $barang = Barang::where('id', $idbarang)->get()->first();
+        if($barang ==  null){
+            return redirect('inputbaki')->with('error', 'Barcode barang tidak ditemukan ! Mohon cek kembali');
+        }
         $barang->stok = 'Luar'.$nomerbaki;
         $tanggalkeluar = Input::get('tanggalkeluar');
         $barang->tanggalkeluar = Carbon::parse($tanggalkeluar);
@@ -94,7 +97,7 @@ class AdminController extends Controller
         $barangcancel = Barang::where('id', $idbarangcancel)->get()->first();
         $barangcancel->stok = 'Dalam';
         $barangcancel->save();
-        
+
         return redirect('inputbaki')->with('alert', 'Barang telah dicancel masuk baki ! Silahkan melanjutkan pekerjaan anda');
     }
 }

@@ -13,6 +13,11 @@
                                 <h4> {{ session('alert') }} </h4>
                             </div>
                         @endif
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                <h4> {{ session('error') }} </h4>
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <!-- /.row -->
