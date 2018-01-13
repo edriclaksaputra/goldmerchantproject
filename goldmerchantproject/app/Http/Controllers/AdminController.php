@@ -63,10 +63,38 @@ class AdminController extends Controller
         $newBarang->keterangan = Input::get('keterangan');
         $newBarang->save();
 
-        return redirect('inputbaru')->with('alert', 'Barang baru telah berhasil disimpan ! Silahkan melanjutkan pekerjaan anda');;
+        return redirect('inputbaru')->with('alert', 'Barang baru telah berhasil disimpan ! Silahkan melanjutkan pekerjaan anda');
     }
 
     public function inputbaki(){
-        return view('admin.inputbaki');
+        $listbarang = Barang::where('stok', '!=', 'Dalam')->get();
+        return view('admin.inputbaki', compact('listbarang'));
+    }
+
+    public function insertbarangbaki(Request $request){
+        $validator = Validator::make($request->all(), [
+            'tanggalkeluar' => 'required|string',
+            'nomerbaki' => 'required|integer',
+            'barcode' => 'required|string',
+        ])->validate();
+
+        $idbarang = Input::get('barcode');
+        $nomerbaki = Input::get('nomerbaki');
+        $barang = Barang::where('id', $idbarang)->get()->first();
+        $barang->stok = 'Luar'.$nomerbaki;
+        $tanggalkeluar = Input::get('tanggalkeluar');
+        $barang->tanggalkeluar = Carbon::parse($tanggalkeluar);
+        $barang->save();
+
+        return redirect('inputbaki')->with('alert', 'Barang telah diupdate ke stok luar ! Silahkan pindahkan barang ke dalam baki dan lanjutkan perkerjaan anda');
+    }
+
+    public function cancelbarangbaki(){
+        $idbarangcancel = Input::get('idbarangcancel');
+        $barangcancel = Barang::where('id', $idbarangcancel)->get()->first();
+        $barangcancel->stok = 'Dalam';
+        $barangcancel->save();
+        
+        return redirect('inputbaki')->with('alert', 'Barang telah dicancel masuk baki ! Silahkan melanjutkan pekerjaan anda');
     }
 }

@@ -28,6 +28,7 @@ class CreateBarangsTable extends Migration
             $table->string('stok');
             $table->string('status')->nullable();
             $table->date('tanggalmasuk');
+            $table->date('tanggalkeluar')->nullable();;
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });
