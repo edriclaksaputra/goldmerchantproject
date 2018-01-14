@@ -104,7 +104,7 @@
                                                     <div class="panel-heading col-sm-2 {{ $errors->has('beratasli') ? ' has-error' : '' }}">
                                                         Berat Asli (gram)
                                                     </div>
-                                                    <div class="col-sm-2">
+                                                    <div class="col-sm-3">
                                                         <input type="text" name="beratasli" required autofocus>
                                                         @if ($errors->has('beratasli'))
                                                             <span class="help-block">
@@ -112,7 +112,11 @@
                                                             </span>
                                                         @endif
                                                     </div>
-                                                    <div class="panel-heading col-sm-2 text-right {{ $errors->has('beratpembulatan') ? ' has-error' : '' }}">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-2 {{ $errors->has('beratpembulatan') ? ' has-error' : '' }}">
                                                         Berat RU (gram)
                                                     </div>
                                                     <div class="col-sm-1">
