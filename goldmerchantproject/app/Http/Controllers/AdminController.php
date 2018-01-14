@@ -73,6 +73,9 @@ class AdminController extends Controller
 
     public function insertbarangbaki(){
         $kodebarang = Input::get('kodebarang');
+        if($kodebarang == null){
+            return redirect('inputbaki')->with('error', 'Barang tidak ada yang di-Input ! Mohon cek kembali');
+        }
         $tanggalkeluar = Input::get('tanggalkeluar');
         $nomerbaki = Input::get('nomerbaki');
         for ($i=0; $i < count($kodebarang); $i++) {
@@ -86,7 +89,7 @@ class AdminController extends Controller
                 $barang->save();
             }
         }
-        
+
         return redirect('inputbaki')->with('alert', 'Barang telah diupdate ke stok luar ! Silahkan pindahkan barang ke dalam baki dan lanjutkan perkerjaan anda');
     }
 
