@@ -67,37 +67,35 @@ class AdminController extends Controller
     }
 
     public function inputbaki(){
-        $listbarang = Barang::where('stok', '!=', 'Dalam')->get();
+        $listbarang = Barang::where('stok', '=', 'Dalam')->get();
         return view('admin.inputbaki', compact('listbarang'));
     }
 
-    public function insertbarangbaki(Request $request){
-        $validator = Validator::make($request->all(), [
-            'tanggalkeluar' => 'required|string',
-            'nomerbaki' => 'required|integer',
-            'barcode' => 'required|string',
-        ])->validate();
-
-        $idbarang = Input::get('barcode');
-        $nomerbaki = Input::get('nomerbaki');
-        $barang = Barang::where('id', $idbarang)->get()->first();
-        if($barang ==  null){
-            return redirect('inputbaki')->with('error', 'Barcode barang tidak ditemukan ! Mohon cek kembali');
-        }
-        $barang->stok = 'Luar'.$nomerbaki;
+    public function insertbarangbaki(){
+        $kodebarang = Input::get('kodebarang');
         $tanggalkeluar = Input::get('tanggalkeluar');
-        $barang->tanggalkeluar = Carbon::parse($tanggalkeluar);
-        $barang->save();
-
+        $nomerbaki = Input::get('nomerbaki');
+        for ($i=0; $i < count($kodebarang); $i++) {
+            if(array_key_exists($i, $kodebarang)){
+                $barang = Barang::where('id', $kodebarang[$i])->get()->first();
+                if($barang ==  null){
+                    return redirect('inputbaki')->with('error', 'Barcode barang tidak ditemukan ! Mohon cek kembali');
+                }
+                $barang->stok = 'Luar'.$nomerbaki[$i];
+                $barang->tanggalkeluar = Carbon::parse($tanggalkeluar[$i]);
+                $barang->save();
+            }
+        }
+        
         return redirect('inputbaki')->with('alert', 'Barang telah diupdate ke stok luar ! Silahkan pindahkan barang ke dalam baki dan lanjutkan perkerjaan anda');
     }
 
-    public function cancelbarangbaki(){
-        $idbarangcancel = Input::get('idbarangcancel');
-        $barangcancel = Barang::where('id', $idbarangcancel)->get()->first();
-        $barangcancel->stok = 'Dalam';
-        $barangcancel->save();
+    // public function cancelbarangbaki(){
+    //     $idbarangcancel = Input::get('idbarangcancel');
+    //     $barangcancel = Barang::where('id', $idbarangcancel)->get()->first();
+    //     $barangcancel->stok = 'Dalam';
+    //     $barangcancel->save();
 
-        return redirect('inputbaki')->with('alert', 'Barang telah dicancel masuk baki ! Silahkan melanjutkan pekerjaan anda');
-    }
+    //     return redirect('inputbaki')->with('alert', 'Barang telah dicancel masuk baki ! Silahkan melanjutkan pekerjaan anda');
+    // }
 }
