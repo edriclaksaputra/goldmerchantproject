@@ -26,6 +26,7 @@ Route::post('/inputbaru.insertbarangbaru', 'AdminController@insertbarangbaru')->
 Route::get('/inputbaki', 'AdminController@inputbaki')->name('inputbaki');
 Route::post('/inputbaki.insertbarangbaki', 'AdminController@insertbarangbaki')->name('insertbarangbaki');
 Route::get('/databaki', 'AdminController@databaki')->name('databaki');
+Route::post('/databaki.detail', 'AdminController@detaildatabaki')->name('detaildatabaki');
 
 //Route Kasir
 Route::get('/validasi', 'KasirController@validasi')->name('validasi');

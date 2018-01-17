@@ -11,42 +11,6 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Input Data Baki
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <form action="/databaki.detail" method="post" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
-                                    <div class="panel-heading col-sm-2">
-                                    Nomor Baki :
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <select class="form-control" name="nomorbaki">
-                                            <option value="Luar1">Baki 1</option>
-                                            <option value="Luar2">Baki 2</option>
-                                            <option value="Luar3">Baki 3</option>
-                                            <option value="Luar4">Baki 4</option>
-                                            <option value="Luar5">Baki 5</option>
-                                            <option value="Luar6">Baki 6</option>
-                                            <option value="Luar7">Baki 7</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <button type="Submit" class="btn btn-success">Proses</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- /.panel -->
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-                @if($databaki != null)
-                <div class="row">
-                    <div class="col-lg-11">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
                                 List Data Baki
                             </div>
                             <!-- /.panel-heading -->
@@ -63,15 +27,41 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($databaki as $detaildatabaki)
                                             <tr class="gradeX">
-                                                <td class="col-sm-2">{{$detaildatabaki->tanggalkeluar}}</td>
-                                                <td class="col-sm-2">{{$detaildatabaki->id}}</td>
-                                                <td class="center">{{$detaildatabaki->jenis}}</td>
-                                                <td class="center">{{$detaildatabaki->namajenis}}</td>
-                                                <td class="center">{{$detaildatabaki->beratasli}}</td>
+                                                <td>9-Dec-2017</td>
+                                                <td>Dillo 0.8</td>
+                                                <td>Embedded devices</td>
+                                                <td class="center">-</td>
+                                                <td class="center">X</td>
                                             </tr>
-                                            @endforeach
+                                            <tr class="gradeX">
+                                                <td>9-Dec-2017</td>
+                                                <td>Links</td>
+                                                <td>Text only</td>
+                                                <td class="center">-</td>
+                                                <td class="center">X</td>
+                                            </tr>
+                                            <tr class="gradeX">
+                                                <td>9-Dec-2017</td>
+                                                <td>Lynx</td>
+                                                <td>Text only</td>
+                                                <td class="center">-</td>
+                                                <td class="center">X</td>
+                                            </tr>
+                                            <tr class="gradeC">
+                                                <td>9-Dec-2017</td>
+                                                <td>IE Mobile</td>
+                                                <td>Windows Mobile 6</td>
+                                                <td class="center">-</td>
+                                                <td class="center">C</td>
+                                            </tr>
+                                            <tr class="gradeC">
+                                                <td>9-Dec-2017</td>
+                                                <td>PSP browser</td>
+                                                <td>PSP</td>
+                                                <td class="center">-</td>
+                                                <td class="center">C</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -113,7 +103,6 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                @endif
                 <!-- /.row -->
             </div>
             <!-- /#page-wrapper -->

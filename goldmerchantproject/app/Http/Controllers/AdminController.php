@@ -18,7 +18,15 @@ class AdminController extends Controller
      */
     public function databaki()
     {
-        return view('admin.databaki');
+        $databaki = null;
+        return view('admin.databaki', compact('databaki'));
+    }
+
+    public function detaildatabaki()
+    {
+        $noBaki = Input::get('nomorbaki');
+        $databaki = Barang::where('stok', $noBaki)->get();
+        return view('admin.databaki', compact('databaki'));
     }
 
     public function inputbarangbaru(){
