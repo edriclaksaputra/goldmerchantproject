@@ -28,5 +28,7 @@ Route::post('/inputbaki.insertbarangbaki', 'AdminController@insertbarangbaki')->
 Route::get('/databaki', 'AdminController@databaki')->name('databaki');
 Route::post('/databaki.detail', 'AdminController@detaildatabaki')->name('detaildatabaki');
 
-//Route Kasir
-Route::get('/validasi', 'KasirController@validasi')->name('validasi');
+//Route Sales
+Route::get('/penjualan', 'SalesController@penjualan')->name('penjualan');
+Route::post('/detailbarangpenjualan', 'SalesController@detailbarangpenjualan')->name('detailbarangpenjualan');
+Route::post('/inputpenjualan', 'SalesController@inputpenjualan')->name('inputpenjualan');
