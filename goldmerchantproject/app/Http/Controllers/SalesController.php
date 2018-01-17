@@ -28,7 +28,12 @@ class SalesController extends Controller
     {
         $barcode = Input::get('barcode');
         $databarang = Barang::where('id', $barcode)->get()->first();
-        return view('sales.penjualan', compact('databarang'));
+        if($databarang == null){
+        	return redirect('penjualan')->with('error', 'Barang tidak ditemukan ! Tolong cek ketersediaan barang')->with('databarang', $databarang);
+        }
+        else{
+        	return view('sales.penjualan', compact('databarang'));
+        }
     }
 
     public function inputpenjualan()
