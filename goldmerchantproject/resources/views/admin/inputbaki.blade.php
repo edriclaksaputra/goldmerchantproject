@@ -116,7 +116,7 @@
                         <!-- /.panel -->
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                List barang baki
+                                List input baki
                             </div>
                             <div class="panel-body">
                                 <div class="col-lg-10">

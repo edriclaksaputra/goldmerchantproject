@@ -65,8 +65,11 @@
                             <label for="job" class="col-md-4 control-label">Job</label>
 
                             <div class="col-md-6">
-                                <input id="job" type="text" class="form-control" name="job" required>
-
+                                <!-- <input id="job" type="text" class="form-control" name="job" required> -->
+                                <select id="job" class="form-control" name="job" required>
+                                    <option>Admin</option>
+                                    <option>Sales</option>
+                                </select>
                                 @if ($errors->has('job'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('job') }}</strong>

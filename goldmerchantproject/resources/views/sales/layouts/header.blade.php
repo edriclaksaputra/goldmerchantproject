@@ -74,7 +74,7 @@
                 </ul>
                 <!-- /.navbar-top-links -->
 
-                <!-- <div class="navbar-default sidebar" role="navigation">
+                <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
@@ -86,18 +86,22 @@
                                     </button>
                                 </span>
                                 </div>
+                                <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="inputbaru"><i class="fa fa-plus"></i> Input Barang Baru</a>
+                                <a href="penjualan"><i class="fa fa-dollar"></i> Penjualan</a>
                             </li>
                             <li>
-                                <a href="inputbaki"><i class="fa fa-location-arrow"></i> Input Baki</a>
+                                <a href="pembelian"><i class="fa fa-plus"></i> Pembelian</a>
                             </li>
                             <li>
-                                <a href="databaki"><i class="fa fa-table fa-fw"></i> Data Baki</a>
+                                <a href="#"><i class="fa fa-times-circle"></i> Gadai (belum aktif)</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-times-circle"></i> Tebus Gadai (belum aktif)</a>
                             </li>
                         </ul>
                     </div>
-                </div> -->
-                <!-- /.navbar-static-side -->
+                    <!-- /.sidebar-collapse -->
+                </div>
             </nav>
