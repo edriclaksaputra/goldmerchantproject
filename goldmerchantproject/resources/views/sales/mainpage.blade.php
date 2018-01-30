@@ -130,8 +130,8 @@
                                     <div class="row show-grid">
                                         <div class="col-lg-12"><a href="penjualan" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"> JUAL</button></a></div>
                                         <div class="col-lg-12"><a href="pembelian" style="text-decoration: none"><button type="button" class="btn btn-success btn-lg btn-block">BELI</button></a></div>
-                                        <div class="col-lg-12"><a href="#" style="text-decoration: none"><button type="button" class="btn btn-warning btn-lg btn-block">TEBUS *belum aktif</button></a></div>
-                                        <div class="col-lg-12"><a href="#" style="text-decoration: none"><button type="button" class="btn btn-info btn-lg btn-block">GADAI *belum aktif</button></a></div>
+                                        <div class="col-lg-12"><a href="gadai" style="text-decoration: none"><button type="button" class="btn btn-warning btn-lg btn-block">GADAI</button></a></div>
+                                        <div class="col-lg-12"><a href="tebus" style="text-decoration: none"><button type="button" class="btn btn-info btn-lg btn-block">TEBUS</button></a></div>
                                     </div>
                                 </div>
                                 <!-- /.table-responsive -->

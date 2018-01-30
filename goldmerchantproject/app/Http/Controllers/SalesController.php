@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Carbon\Carbon;
 use App\Penjualan;
 use App\Pembelian;
+use App\Gadaitebus;
 
 class SalesController extends Controller
 {
@@ -117,4 +118,41 @@ class SalesController extends Controller
         return redirect('pembelian')->with('alert', 'Pembelian barang berhasil dilakukan ! Silahkan melanjutkan transaksi');
     }
     //pembelian
+
+    //controller penggadaian dan tebus
+    public function gadai()
+    {
+        return view('sales.penggadaian');
+    }
+
+    public function inputdetailgadai(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'totalpinjam' => 'required|integer|',
+        ])->validate();
+
+        $gadai = new Gadaitebus;
+        $tanggalgadai = Input::get('tanggalgadai');
+        $gadai->tanggalgadai = Carbon::parse($tanggalgadai);
+        $gadai->tanggaltebus = null;
+        $gadai->namapenggadai = Input::get('nama');
+        $gadai->namabarang = Input::get('jaminan');
+        $gadai->totalpinjam = Input::get('totalpinjam');
+        $gadai->alamat = Input::get('alamat');
+        $gadai->notelp = Input::get('notelp');
+        $gadai->status = 'belumlunas';
+        $gadai->salesgadai = Input::get('namasales');
+        $gadai->salestebus = null;
+        $gadai->bunga = null;
+        $gadai->totalpengembalian = null;
+        $gadai->save();
+
+        return redirect('gadai')->with('alert', 'Detail gadai berhasil di input ! Silahkan melanjutkan transaksi');
+    }
+
+    public function tebus()
+    {
+        return view('sales.penebusan');
+    }
+    //penggadaian dan tebus
 }

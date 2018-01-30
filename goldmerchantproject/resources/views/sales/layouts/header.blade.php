@@ -95,10 +95,10 @@
                                 <a href="pembelian"><i class="fa fa-plus"></i> Pembelian</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-times-circle"></i> Gadai (belum aktif)</a>
+                                <a href="gadai"><i class="fa fa-credit-card"></i> Gadai</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-times-circle"></i> Tebus Gadai (belum aktif)</a>
+                                <a href="tebus"><i class="fa fa-history"></i> Tebus Gadai</a>
                             </li>
                         </ul>
                     </div>

@@ -37,3 +37,6 @@ Route::get('/pembelian', 'SalesController@pembelian')->name('pembelian');
 Route::get('/pembeliandalam', 'SalesController@pembeliandalam')->name('pembeliandalam');
 Route::post('/detailpembelianbarang', 'SalesController@detailpembelianbarang')->name('detailpembelianbarang');
 Route::post('/inputdatapembelian', 'SalesController@inputdatapembelian')->name('inputdatapembelian');
+Route::get('/gadai', 'SalesController@gadai')->name('gadai');
+Route::post('/gadai.inputdetailgadai', 'SalesController@inputdetailgadai')->name('inputdetailgadai');
+Route::get('/tebus', 'SalesController@tebus')->name('tebus');
