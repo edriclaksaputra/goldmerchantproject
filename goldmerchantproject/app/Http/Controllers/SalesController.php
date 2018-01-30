@@ -154,5 +154,37 @@ class SalesController extends Controller
     {
         return view('sales.penebusan');
     }
+
+    public function detailtebus()
+    {
+        $barcode = Input::get('barcode');
+        $detailgadai = Gadaitebus::find($barcode);
+        if($detailgadai == null){
+            return redirect('tebus')->with('error', 'Detail Gadai tidak ditemukan ! Mohon cek kembali');
+        }
+        else{
+            if($detailgadai->status == 'lunas'){
+                return redirect('tebus')->with('error', 'Status gadai telah selesai ! Mohon cek kembali');
+            }
+            else{
+                return view('sales.detailtebus', compact('detailgadai'));
+            }
+        }
+    }
+
+    public function checkouttebus()
+    {
+        $barcode = Input::get('barcode');
+        $detailtebus = Gadaitebus::find($barcode);
+        $tanggaltebus = Input::get('tanggaltebus');
+        $detailtebus->tanggaltebus = Carbon::parse($tanggaltebus);
+        $detailtebus->salestebus = Input::get('salestebus');
+        $detailtebus->bunga = Input::get('bunga');
+        $detailtebus->totalpengembalian = Input::get('totalbayar');
+        $detailtebus->status = 'lunas';
+        $detailtebus->save();
+
+        return redirect('tebus')->with('alert', 'Detail tebus berhasil di checkout ! Silahkan melanjutkan transaksi');
+    }
     //penggadaian dan tebus
 }

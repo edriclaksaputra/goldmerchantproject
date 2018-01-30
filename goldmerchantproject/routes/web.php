@@ -40,3 +40,5 @@ Route::post('/inputdatapembelian', 'SalesController@inputdatapembelian')->name('
 Route::get('/gadai', 'SalesController@gadai')->name('gadai');
 Route::post('/gadai.inputdetailgadai', 'SalesController@inputdetailgadai')->name('inputdetailgadai');
 Route::get('/tebus', 'SalesController@tebus')->name('tebus');
+Route::post('/tebus.detailtebus', 'SalesController@detailtebus')->name('detailtebus');
+Route::post('/tebus.detailtebus.checkouttebus', 'SalesController@checkouttebus')->name('checkouttebus');

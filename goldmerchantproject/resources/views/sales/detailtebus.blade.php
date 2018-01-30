@@ -2,40 +2,53 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Gadai Barang</h1>
+                        <h1 class="page-header">Tebus</h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                </div>
-                <div class="col-lg-12">
-                    @if (session('alert'))
-                        <div class="alert alert-success">
-                            <h4> {{ session('alert') }} </h4>
-                        </div>
-                    @endif
                 </div>
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                Input Detail Gadai
+                                Input Barcode Gadai
                             </div>
-                            <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
                                     <div class="col-lg-4">
                                         
                                     </div>
-                                    <form action="/gadai.inputdetailgadai" method="post" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                        <div class="col-lg-4">
+                                    <div class="col-lg-4">
+                                        <form action="/tebus.detailtebus.checkouttebus" method="post" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="barcode" value={{$detailgadai->id}}>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="panel-heading col-sm-3">
-                                                        Tanggal
+                                                        Tanggal Tebus
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="tanggalgadai" id="todaydate" required autofocus>
+                                                        <input type="text" name="tanggaltebus" id="todaydate" required autofocus>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
+                                                        Barcode Gadai
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <input type="text" name="barcode" required autofocus value={{$detailgadai->id}}>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
+                                                        Tanggal Gadai
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <input type="text" name="tanggalgadai" required autofocus disabled value={{$detailgadai->tanggalgadai}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -45,7 +58,7 @@
                                                         Nama
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="nama" required autofocus>
+                                                        <input type="text" name="namapenggadai" required autofocus value={{$detailgadai->namapenggadai}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -55,32 +68,17 @@
                                                         Alamat
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="alamat" required autofocus>
+                                                        <input type="text" name="alamat" required autofocus value={{$detailgadai->alamat}}>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="panel-heading col-sm-3">
-                                                        No. Telp
+                                                        Pinjam
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="notelp" required autofocus>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="panel-heading col-sm-3 {{ $errors->has('totalpinjam') ? ' has-error' : '' }}">
-                                                        Uang Pinjam
-                                                    </div>
-                                                    <div class="col-sm-1">
-                                                        <input type="text" name="totalpinjam" required autofocus>
-                                                        @if ($errors->has('totalpinjam'))
-                                                            <span class="help-block">
-                                                                <strong>{{ $errors->first('totalpinjam') }}</strong>
-                                                            </span>
-                                                        @endif
+                                                        <input type="text" name="totalpinjam" required autofocus disabled value={{$detailgadai->totalpinjam}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,7 +88,27 @@
                                                         Jaminan
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="jaminan" required autofocus>
+                                                        <input type="text" name="jaminan" required autofocus disabled value={{$detailgadai->namabarang}}>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
+                                                        Bunga
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <input type="text" name="bunga" required autofocus>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
+                                                        Total Bayar
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <input type="text" name="totalbayar" required autofocus>
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,7 +118,7 @@
                                                         Sales
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="namasales" required autofocus>
+                                                        <input type="text" name="salestebus" required autofocus>
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,12 +126,12 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="col-lg-6 text-right">
-                                                        <button type="Submit" class="btn btn-success">Submit and Print</button>
+                                                        <button type="Submit" class="btn btn-success">Submit</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                     <div class="col-lg-4">
                                         
                                     </div>
@@ -133,7 +151,6 @@
         </div>
         <!-- /#wrapper -->
 @include('sales.layouts.footer')
-
 <script>
     var d = new Date();
     document.getElementById("todaydate").value = d.toDateString();
