@@ -52,10 +52,10 @@ class SalesController extends Controller
 
     	$barangjual->save();
 
-    	$barangstok = Barang::where('id', $barangjual->barangs_id)->get()->first();
-    	$barangstok->stok = 'Terjual';
-    	$barangstok->save();
-    	return redirect('penjualan')->with('alert', 'Barang telah berhasil di checkout ! Silahkan melanjutkan transaksi lain');
+    	// $barangstok = Barang::where('id', $barangjual->barangs_id)->get()->first();
+    	// $barangstok->stok = 'Terjual';
+    	// $barangstok->save();
+    	return redirect('penjualan')->with('alert', 'Barang telah berhasil di checkout ! Silahkan lanjutkan pembayaran di kasir');
     }
 
     //penjualan
@@ -117,7 +117,7 @@ class SalesController extends Controller
         
         $pembelian->save();
 
-        return redirect('pembelian')->with('alert', 'Pembelian barang berhasil dilakukan ! Silahkan melanjutkan transaksi');
+        return redirect('pembelian')->with('alert', 'Pembelian barang berhasil dilakukan ! Silahkan lanjutkan transaksi di kasir');
     }
     //pembelian
 
@@ -150,7 +150,7 @@ class SalesController extends Controller
         $gadai->statusvalidasi = 0;
         $gadai->save();
 
-        return redirect('gadai')->with('alert', 'Detail gadai berhasil di input ! Silahkan melanjutkan transaksi');
+        return redirect('gadai')->with('alert', 'Detail gadai berhasil di input ! Silahkan claim pinjaman di kasir');
     }
 
     public function tebus()

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Penjualan;
 use App\Pembelian;
 use App\Gadaitebus;
+use App\Barang;
+use Illuminate\Support\Facades\Input;
 
 class KasirController extends Controller
 {
@@ -16,5 +18,61 @@ class KasirController extends Controller
     	$listGadai = Gadaitebus::where([['status', 'belumlunas'],['statusvalidasi', 0]])->get();
     	
         return view('kasir.validasi', compact('listPenjualan', 'listPembelian', 'listGadai'));
+    }
+
+    public function validasi()
+    {
+    	$idtransaksi = Input::get('idtransaksi');
+    	$jenis = Input::get('jenis');
+    	$result = Input::get('result');
+
+    	if($result == 'accept'){
+    		if($jenis == 'pembelian'){
+    			$transaksi = Pembelian::find($idtransaksi);
+    			$transaksi->statusvalidasi = 1;
+    			$transaksi->save();
+
+    			return redirect('/validasitransaksi')->with('alert', 'Transaksi pembelian telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');
+    		}
+    		else if($jenis == 'penjualan'){
+    			$transaksi = Penjualan::find($idtransaksi);
+    			$transaksi->statusvalidasi = 1;
+    			$transaksi->save();
+    			
+    			//status barang diubah
+    			$barang = Barang::find($transaksi->barangs_id);
+    			$barang->stok = 'Terjual';
+    			$barang->save();
+
+    			return redirect('/validasitransaksi')->with('alert', 'Transaksi penjualan telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');
+    		}
+    		else{
+    			$transaksi = Gadaitebus::find($idtransaksi);
+    			$transaksi->statusvalidasi = 1;
+    			$transaksi->save();
+    			
+    			return redirect('/validasitransaksi')->with('alert', 'Transaksi gadai telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');
+    		}
+    	}
+    	else{
+    		if($jenis == 'pembelian'){
+    			$transaksi = Pembelian::find($idtransaksi);
+    			$transaksi->delete();
+
+    			return redirect('/validasitransaksi')->with('warning', 'Transaksi pembelian telah di cancel ! Silahkan lanjutkan transaksi lain');
+    		}
+    		else if($jenis == 'penjualan'){
+    			$transaksi = Penjualan::find($idtransaksi);
+    			$transaksi->delete();
+    			
+    			return redirect('/validasitransaksi')->with('warning', 'Transaksi penjualan telah di cancel ! Silahkan lanjutkan transaksi lain');
+    		}
+    		else{
+    			$transaksi = Gadaitebus::find($idtransaksi);
+    			$transaksi->delete();
+    			
+    			return redirect('/validasitransaksi')->with('warning', 'Transaksi gadai telah di cancel ! Silahkan lanjutkan transaksi lain');
+    		}
+    	}
     }
 }

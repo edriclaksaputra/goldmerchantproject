@@ -45,3 +45,4 @@ Route::post('/tebus.detailtebus.checkouttebus', 'SalesController@checkouttebus')
 
 //Route Kasir
 Route::get('/validasitransaksi', 'KasirController@index')->name('validasitransaksi');
+Route::post('/validasitransaksi.validasi', 'KasirController@validasi')->name('validasi');
