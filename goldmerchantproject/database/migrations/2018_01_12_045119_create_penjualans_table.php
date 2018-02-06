@@ -20,6 +20,7 @@ class CreatePenjualansTable extends Migration
             $table->string('nama');
             $table->text('alamat');
             $table->string('namasales');
+            $table->boolean('statusvalidasi');
             $table->timestamps();
 
             $table->foreign('barangs_id')->references('id')->on('barangs')->onDelete('cascade');

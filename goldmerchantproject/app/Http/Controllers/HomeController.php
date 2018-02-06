@@ -29,5 +29,8 @@ class HomeController extends Controller
         else if(Auth::user()->job == 'Sales'){
             return view('sales/mainpage');
         }
+        else if(Auth::user()->job == 'Kasir'){
+            return redirect('validasitransaksi');
+        }
     }
 }

@@ -26,6 +26,7 @@ class CreateGadaitebusesTable extends Migration
             $table->string('salesgadai')->nullable();
             $table->string('salestebus')->nullable();
             $table->float('bunga', 10, 3)->nullable();
+            $table->boolean('statusvalidasi');
             $table->float('totalpengembalian', 10, 3)->nullable();
             $table->timestamps();
         });

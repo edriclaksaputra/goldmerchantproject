@@ -42,3 +42,6 @@ Route::post('/gadai.inputdetailgadai', 'SalesController@inputdetailgadai')->name
 Route::get('/tebus', 'SalesController@tebus')->name('tebus');
 Route::post('/tebus.detailtebus', 'SalesController@detailtebus')->name('detailtebus');
 Route::post('/tebus.detailtebus.checkouttebus', 'SalesController@checkouttebus')->name('checkouttebus');
+
+//Route Kasir
+Route::get('/validasitransaksi', 'KasirController@index')->name('validasitransaksi');

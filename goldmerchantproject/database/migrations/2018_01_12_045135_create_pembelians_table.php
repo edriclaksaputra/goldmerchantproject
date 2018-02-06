@@ -31,6 +31,7 @@ class CreatePembeliansTable extends Migration
             $table->date('tanggalmasuk');
             $table->date('tanggalkeluar')->nullable();
             $table->string('namasales');
+            $table->boolean('statusvalidasi');
             $table->timestamps();
 
             $table->foreign('penjualans_id')->references('id')->on('penjualans')->onDelete('cascade');

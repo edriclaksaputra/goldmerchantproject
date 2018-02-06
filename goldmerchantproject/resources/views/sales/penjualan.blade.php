@@ -76,17 +76,6 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <div class="panel-heading col-sm-2">
-                                                    Kode Nota
-                                                </div>
-                                                <div class="col-sm-1">
-                                                    <input type="hidden">
-                                                    <input type="text" name="kodenota" id="generatenota">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12">
                                                 <div class="panel-heading col-lg-2">
                                                     Tanggal
                                                 </div>

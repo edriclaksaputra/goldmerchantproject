@@ -69,6 +69,7 @@
                                 <select id="job" class="form-control" name="job" required>
                                     <option>Admin</option>
                                     <option>Sales</option>
+                                    <option>Kasir</option>
                                 </select>
                                 @if ($errors->has('job'))
                                     <span class="help-block">

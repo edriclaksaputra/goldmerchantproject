@@ -47,7 +47,8 @@ class SalesController extends Controller
     	$barangjual->tanggal = Carbon::parse($tanggalpenjualan);
     	$barangjual->nama = Input::get('namacustomer');
     	$barangjual->alamat = Input::get('alamatcustomer');
-    	$barangjual->namasales = Input::get('namasales');
+        $barangjual->namasales = Input::get('namasales');
+        $barangjual->statusvalidasi = 0;
 
     	$barangjual->save();
 
@@ -112,6 +113,7 @@ class SalesController extends Controller
         $pembelian->tanggalmasuk = Carbon::parse($dateformat);
         $pembelian->tanggalkeluar = null;
         $pembelian->namasales = Input::get('namasales');
+        $pembelian->statusvalidasi = 0;
         
         $pembelian->save();
 
@@ -145,6 +147,7 @@ class SalesController extends Controller
         $gadai->salestebus = null;
         $gadai->bunga = null;
         $gadai->totalpengembalian = null;
+        $gadai->statusvalidasi = 0;
         $gadai->save();
 
         return redirect('gadai')->with('alert', 'Detail gadai berhasil di input ! Silahkan melanjutkan transaksi');
