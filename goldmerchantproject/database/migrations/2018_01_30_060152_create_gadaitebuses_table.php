@@ -19,15 +19,15 @@ class CreateGadaitebusesTable extends Migration
             $table->date('tanggaltebus')->nullable();
             $table->string('namapenggadai')->nullable();
             $table->string('namabarang')->nullable();
-            $table->float('totalpinjam', 10, 3);
+            $table->float('totalpinjam', 10, 2);
             $table->string('alamat')->nullable();
             $table->string('notelp')->nullable();
             $table->string('status')->nullable();
             $table->string('salesgadai')->nullable();
             $table->string('salestebus')->nullable();
-            $table->float('bunga', 10, 3)->nullable();
+            $table->float('bunga', 10, 2)->nullable();
             $table->boolean('statusvalidasi');
-            $table->float('totalpengembalian', 10, 3)->nullable();
+            $table->float('totalpengembalian', 10, 2)->nullable();
             $table->timestamps();
         });
     }

@@ -110,7 +110,7 @@
                                                     Barcode Barang
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <input type="text" name="barcodebarang" value="{{$databarang->id}}" required autofocus>
+                                                    <input type="text" name="barcodebarang" value="{{$databarang->id}}" required autofocus disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +120,7 @@
                                                     Jenis
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input type="text" name="jenisbarang" value="{{$databarang->jenis}}" required autofocus>
+                                                    <input type="text" name="jenisbarang" value="{{$databarang->jenis}}" required autofocus disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,7 +130,7 @@
                                                     Nama Jenis
                                                 </div>
                                                 <div class="col-sm-2">
-                                                    <input type="text" name="namajenis" value="{{$databarang->namajenis}}" required autofocus>
+                                                    <input type="text" name="namajenis" value="{{$databarang->namajenis}}" required autofocus disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@
                                                     Berat (gram)
                                                 </div>
                                                 <div class="col-sm-2">
-                                                    <input type="text" id="beratasli" name="beratasli" value="{{$databarang->beratasli}}" required autofocus>
+                                                    <input type="text" id="beratasli" name="beratasli" value="{{$databarang->beratasli}}" required autofocus disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,7 +150,7 @@
                                                     Harga
                                                 </div>
                                                 <div class="col-sm-1">
-                                                    <input type="text" id="hargagram" name="hargagram" value="{{$databarang->hargagram}}" required autofocus>
+                                                    <input type="text" id="hargagram" name="hargagram" value="{{$databarang->hargagram}}" required autofocus disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -160,7 +160,7 @@
                                                     Supplier
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <input type="text" name="supplier" value="{{$databarang->supplier}}" required autofocus>
+                                                    <input type="text" name="supplier" value="{{$databarang->supplier}}" required autofocus disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,7 +170,7 @@
                                                     Kadar
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <input type="text" name="kadar" value="{{$databarang->kadar}}" required autofocus>
+                                                    <input type="text" name="kadar" value="{{$databarang->kadar}}" required autofocus disabled>
                                                 </div>
                                             </div>
                                         </div>

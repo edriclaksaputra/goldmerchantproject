@@ -17,11 +17,11 @@ class CreateBarangsTable extends Migration
             $table->increments('id');
             $table->string('jenis');
             $table->string('namajenis');
-            $table->integer('ukuran')->nullable();
-            $table->float('beratasli', 10, 3);
-            $table->float('beratpembulatan', 10, 3);
+            $table->string('ukuran')->nullable();
+            $table->float('beratasli', 10, 2);
+            $table->float('beratpembulatan', 10, 2);
             $table->integer('hargagram');
-            $table->float('totalharga', 20, 3);
+            $table->float('totalharga', 20, 2);
             $table->string('supplier')->nullable();
             $table->string('kadar')->nullable();
             $table->string('foto')->nullable();

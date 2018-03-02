@@ -20,12 +20,12 @@ class CreatePembeliansTable extends Migration
             $table->string('alamatpenjual');
             $table->string('jenis');
             $table->string('namajenis');
-            $table->integer('ukuran')->nullable();
-            $table->float('beratasli', 10, 3);
-            $table->float('beratpembulatan', 10, 3)->nullable();
+            $table->string('ukuran')->nullable();
+            $table->float('beratasli', 10, 2);
+            $table->float('beratpembulatan', 10, 2)->nullable();
             $table->integer('hargagram');
-            $table->float('totalharga', 20, 3);
-            $table->float('totalongkos', 20, 3)->nullable();
+            $table->float('totalharga', 20, 2);
+            $table->float('totalongkos', 20, 2)->nullable();
             $table->string('kadar')->nullable();
             $table->string('kondisi')->nullable();
             $table->date('tanggalmasuk');

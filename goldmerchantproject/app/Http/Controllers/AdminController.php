@@ -53,6 +53,7 @@ class AdminController extends Controller
         $newBarang->ukuran = Input::get('ukuranbarang');
         $newBarang->namajenis = Input::get('namabarang');
         $newBarang->beratasli = Input::get('beratasli');
+        $beratasli = Input::get('beratasli');
         $newBarang->beratpembulatan = Input::get('beratpembulatan');
         $newBarang->kadar = Input::get('kadar');
         $newBarang->hargagram = Input::get('hargajual');
