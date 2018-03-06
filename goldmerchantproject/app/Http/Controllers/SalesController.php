@@ -49,7 +49,6 @@ class SalesController extends Controller
     	$barangjual->alamat = Input::get('alamatcustomer');
         $barangjual->namasales = Input::get('namasales');
         $barangjual->statusvalidasi = 0;
-
     	$barangjual->save();
 
     	// $barangstok = Barang::where('id', $barangjual->barangs_id)->get()->first();
