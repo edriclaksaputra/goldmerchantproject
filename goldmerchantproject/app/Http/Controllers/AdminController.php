@@ -19,6 +19,10 @@ class AdminController extends Controller
     public function databaki()
     {
         $databaki = null;
+        // $int = 12530;
+        // $biner = decbin($int);
+        // $binerlong = str_pad($biner, 16, '0', STR_PAD_LEFT);
+        // dd($binerlong);
         return view('admin.databaki', compact('databaki'));
     }
 
