@@ -250,7 +250,7 @@
                                                         Sales
                                                     </div>
                                                     <div class="col-lg-1">
-                                                        <input type="text" name="namasales" required autofocus>
+                                                        <input type="text" name="namasales" value="{{$detailEmployeeJson->name}}" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>

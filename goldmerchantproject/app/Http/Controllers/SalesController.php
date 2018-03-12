@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use App\Penjualan;
 use App\Pembelian;
 use App\Gadaitebus;
+use App\Employee;
 
 class SalesController extends Controller
 {
@@ -27,15 +28,54 @@ class SalesController extends Controller
         return view('sales.penjualan', compact('databarang'));
     }
 
+    public function usercheck()
+    {
+        $page = Input::get('page');
+        $error = null;
+        return view('sales.checkuser', compact('page', 'error'));
+    }
+
+    public function usercheckvalidation()
+    {
+        $passcode = Input::get('passcode');
+        $page = Input::get('page');
+        if($passcode == null){
+            $error = "Input passcode kosong ! Mohon cek kembali";
+            return view('sales.checkuser', compact('page', 'error'));
+        }
+        else{
+            $employeeDetail = Employee::where('passcode', $passcode)->get()->first();
+            if($employeeDetail == null){
+                $error = "Employee tidak ditemukan ! Mohon cek kembali";
+                return view('sales.checkuser', compact('page', 'error'));
+            }
+            else{
+                if($page == "jual"){
+                    return redirect('/penjualan')->with('employeeDetail', $employeeDetail);
+                }
+                else if($page == "beli"){
+                    return redirect('/pembelian')->with('employeeDetail', $employeeDetail);
+                }
+                else if($page == "gadai"){
+                }
+                else if($page == "tebus"){
+                }
+            }
+        }
+    }
+
     public function detailbarangpenjualan()
     {
+        $detailEmployee = Input::get('detailEmployee');
+        $detailEmployeeJson = json_decode($detailEmployee);
+
         $barcode = Input::get('barcode');
         $databarang = Barang::where([['id', $barcode],['stok', '!=', 'Terjual']])->get()->first();
         if($databarang == null){
         	return redirect('penjualan')->with('error', 'Barang tidak ditemukan ! Tolong cek ketersediaan barang')->with('databarang', $databarang);
         }
         else{
-        	return view('sales.penjualan', compact('databarang'));
+        	return view('sales.penjualan', compact('databarang', 'detailEmployeeJson'))->with('employeeDetail', $detailEmployeeJson);
         }
     }
 
@@ -73,6 +113,9 @@ class SalesController extends Controller
     public function detailpembelianbarang()
     {
         $idPenjualan = Input::get('barcode');
+        $detailEmployee = Input::get('detailEmployee');
+        $detailEmployeeJson = json_decode($detailEmployee);
+
         if($idPenjualan != 0){
             $detailPenjualan = Penjualan::where('id', $idPenjualan)->get()->first();
             if($detailPenjualan != null){
@@ -84,7 +127,7 @@ class SalesController extends Controller
         }
         else if($idPenjualan == 0){
             $detailPenjualan = null;
-            return view('sales.detailpembelianbarang', compact('detailPenjualan'));
+            return view('sales.detailpembelianbarang', compact('detailPenjualan', 'detailEmployeeJson'));
         }
     }
 

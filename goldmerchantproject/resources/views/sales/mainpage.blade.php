@@ -128,10 +128,15 @@
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
                                     <div class="row show-grid">
-                                        <div class="col-lg-12"><a href="penjualan" style="text-decoration: none"><button type="button" class="btn btn-primary btn-lg btn-block"> JUAL</button></a></div>
-                                        <div class="col-lg-12"><a href="pembelian" style="text-decoration: none"><button type="button" class="btn btn-success btn-lg btn-block">BELI</button></a></div>
-                                        <div class="col-lg-12"><a href="gadai" style="text-decoration: none"><button type="button" class="btn btn-warning btn-lg btn-block">GADAI</button></a></div>
-                                        <div class="col-lg-12"><a href="tebus" style="text-decoration: none"><button type="button" class="btn btn-info btn-lg btn-block">TEBUS</button></a></div>
+                                        <form action="/usercheck" method="post" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                            <div class="col-lg-12"><a style="text-decoration: none"><button type="submit" class="btn btn-primary btn-lg btn-block" onclick="setPage('jual')"> JUAL</button></a></div>
+                                            <div class="col-lg-12"><a style="text-decoration: none"><button type="submit" class="btn btn-success btn-lg btn-block" onclick="setPage('beli')">BELI</button></a></div>
+                                            <div class="col-lg-12"><a style="text-decoration: none"><button type="submit" class="btn btn-warning btn-lg btn-block" onclick="setPage('gadai')">GADAI</button></a></div>
+                                            <div class="col-lg-12"><a style="text-decoration: none"><button type="submit" class="btn btn-info btn-lg btn-block" onclick="setPage('tebus')">TEBUS</button></a></div>
+
+                                            <input type="hidden" name="page" id="idpage">
+                                        </form>
                                     </div>
                                 </div>
                                 <!-- /.table-responsive -->
@@ -149,3 +154,8 @@
         </div>
         <!-- /#wrapper -->
 @include('sales.layouts.footer')
+<script>
+    function setPage(page) {
+        document.getElementById("idpage").value = page;
+    }
+</script>

@@ -76,32 +76,41 @@
 
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-                            <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                                </div>
-                                <!-- /input-group -->
-                            </li>
-                            <li>
-                                <a href="penjualan"><i class="fa fa-dollar"></i> Penjualan</a>
-                            </li>
-                            <li>
-                                <a href="pembelian"><i class="fa fa-plus"></i> Pembelian</a>
-                            </li>
-                            <li>
-                                <a href="gadai"><i class="fa fa-credit-card"></i> Gadai</a>
-                            </li>
-                            <li>
-                                <a href="tebus"><i class="fa fa-history"></i> Tebus Gadai</a>
-                            </li>
-                        </ul>
+                        <form action="/usercheck" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <ul class="nav" id="side-menu">
+                                <li class="sidebar-search">
+                                    <div class="input-group custom-search-form">
+                                        <input type="text" class="form-control" placeholder="Search...">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-dollar"></i> <button type="submit" onclick="setPage('jual')" style="background: none; border:none"> Penjualan</button></a>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-plus"></i> <button type="submit" onclick="setPage('beli')" style="background: none; border:none"> Pembelian</button></a>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-credit-card"></i> <button type="submit" onclick="setPage('gadai')" style="background: none; border:none"> Gadai</button></a>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-history"></i> <button type="submit" onclick="setPage('tebus')" style="background: none; border:none"> Tebus Gadai</button></a>
+                                </li>
+                            </ul>
+                            <input type="hidden" name="page" id="idpage">
+                        </form>
                     </div>
                     <!-- /.sidebar-collapse -->
                 </div>
             </nav>
+<script>
+    function setPage(page) {
+        document.getElementById("idpage").value = page;
+    }
+</script>

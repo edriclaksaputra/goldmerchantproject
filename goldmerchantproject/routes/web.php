@@ -43,6 +43,10 @@ Route::get('/tebus', 'SalesController@tebus')->name('tebus');
 Route::post('/tebus.detailtebus', 'SalesController@detailtebus')->name('detailtebus');
 Route::post('/tebus.detailtebus.checkouttebus', 'SalesController@checkouttebus')->name('checkouttebus');
 
+Route::post('/usercheck', 'SalesController@usercheck')->name('usercheck');
+Route::get('/usercheck', 'SalesController@usercheck')->name('usercheck');
+Route::post('/usercheck.validation', 'SalesController@usercheckvalidation')->name('usercheckvalidation');
+
 //Route Kasir
 Route::get('/validasitransaksi', 'KasirController@index')->name('validasitransaksi');
 Route::post('/validasitransaksi.validasi', 'KasirController@validasi')->name('validasi');

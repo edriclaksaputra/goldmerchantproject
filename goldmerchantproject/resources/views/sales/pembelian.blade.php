@@ -20,7 +20,7 @@
                     <div class="col-lg-12">
                         <!-- /.panel-heading -->
                         <div class="row col-lg-12">
-                            <a href="pembeliandalam"><button type="button" class="btn btn-success">Pembelian barang toko</button></a>
+                            <a href="{{ route('pembeliandalam', session('employeeDetail') ) }}"><button type="button" class="btn btn-success">Pembelian barang toko</button></a>
                             <span>*Barang yang akan dibeli adalah barang yang berasal dari toko Arjuna</span>
                         </div>
                         <br><br><br>
@@ -30,6 +30,7 @@
                                 <button type="Submit" class="btn btn-warning">Pembelian barang luar</button>
                                 <input type="hidden" name="barcode" value="0">
                                 <span>*Barang bukan dari toko Arjuna</span>
+                                <input type="hidden" name="detailEmployee" value="{{session('employeeDetail')}}">
                             </form>
                         </div>
                         <!-- /.panel-body -->
