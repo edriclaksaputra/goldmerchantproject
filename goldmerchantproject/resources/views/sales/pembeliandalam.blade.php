@@ -37,7 +37,7 @@
                                     <div class="col-sm-4 text-left">
                                         <input type="text" name="barcode" required autofocus size="35">
                                     </div>
-                                    <input type="hidden" name="detailEmployee" value="{{session('employeeDetail')}}">
+                                    <input type="hidden" name="detailEmployee" value="{{$detailEmployee}}"">
                                     <div class="col-sm-2">
                                         <button type="Submit" class="btn btn-success">Proses</button>
                                     </div>

@@ -122,6 +122,11 @@
                 </div>
                 <!-- /.row -->
                 <div class="row">
+                @if (session('alert'))
+                    <div class="alert alert-success">
+                        <h4> {{ session('alert') }} </h4>
+                    </div>
+                @endif
                     <div class="col-lg-7">
                         <div class="panel panel-default">
                             <!-- /.panel-heading -->

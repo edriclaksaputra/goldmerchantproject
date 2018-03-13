@@ -57,8 +57,10 @@ class SalesController extends Controller
                     return redirect('/pembelian')->with('employeeDetail', $employeeDetail);
                 }
                 else if($page == "gadai"){
+                    return view('sales.penggadaian', compact('employeeDetail'));
                 }
                 else if($page == "tebus"){
+                    return redirect('/tebus')->with('employeeDetail', $employeeDetail);
                 }
             }
         }
@@ -94,7 +96,7 @@ class SalesController extends Controller
     	// $barangstok = Barang::where('id', $barangjual->barangs_id)->get()->first();
     	// $barangstok->stok = 'Terjual';
     	// $barangstok->save();
-    	return redirect('penjualan')->with('alert', 'Barang telah berhasil di checkout ! Silahkan lanjutkan pembayaran di kasir');
+    	return redirect('/')->with('alert', 'Barang telah berhasil di checkout ! Silahkan lanjutkan pembayaran di kasir');
     }
 
     //penjualan
@@ -107,7 +109,8 @@ class SalesController extends Controller
 
     public function pembeliandalam()
     {
-        return view('sales.pembeliandalam');
+        $detailEmployee = Input::get('detailEmployee');
+        return view('sales.pembeliandalam', compact('detailEmployee'));
     }
 
     public function detailpembelianbarang()
@@ -119,10 +122,10 @@ class SalesController extends Controller
         if($idPenjualan != 0){
             $detailPenjualan = Penjualan::where('id', $idPenjualan)->get()->first();
             if($detailPenjualan != null){
-                return view('sales.detailpembelianbarang', compact('detailPenjualan'));
+                return view('sales.detailpembelianbarang', compact('detailPenjualan', 'detailEmployeeJson'));
             }
             else{
-                return redirect('pembeliandalam')->with('error', 'Rekap data penjualan tidak ditemukan ! Mohon cek kembali');
+                return redirect('pembelian')->with('error', 'Rekap data penjualan tidak ditemukan ! Mohon cek kembali')->with('employeeDetail', $detailEmployee);
             }
         }
         else if($idPenjualan == 0){
@@ -159,7 +162,7 @@ class SalesController extends Controller
         
         $pembelian->save();
 
-        return redirect('pembelian')->with('alert', 'Pembelian barang berhasil dilakukan ! Silahkan lanjutkan transaksi di kasir');
+        return redirect('/')->with('alert', 'Pembelian barang berhasil dilakukan ! Silahkan lanjutkan transaksi di kasir');
     }
     //pembelian
 
@@ -192,7 +195,7 @@ class SalesController extends Controller
         $gadai->statusvalidasi = 0;
         $gadai->save();
 
-        return redirect('gadai')->with('alert', 'Detail gadai berhasil di input ! Silahkan claim pinjaman di kasir');
+        return redirect('/')->with('alert', 'Detail gadai berhasil di input ! Silahkan claim pinjaman di kasir');
     }
 
     public function tebus()
@@ -202,17 +205,20 @@ class SalesController extends Controller
 
     public function detailtebus()
     {
+        $detailEmployee = Input::get('detailEmployee');
+        $detailEmployeeJson = json_decode($detailEmployee);
+
         $barcode = Input::get('barcode');
         $detailgadai = Gadaitebus::find($barcode);
         if($detailgadai == null){
-            return redirect('tebus')->with('error', 'Detail Gadai tidak ditemukan ! Mohon cek kembali');
+            return redirect('tebus')->with('error', 'Detail Gadai tidak ditemukan ! Mohon cek kembali')->with('employeeDetail', $detailEmployee);
         }
         else{
             if($detailgadai->status == 'lunas'){
-                return redirect('tebus')->with('error', 'Status gadai telah selesai ! Mohon cek kembali');
+                return redirect('tebus')->with('error', 'Status gadai telah selesai ! Mohon cek kembali')->with('employeeDetail', $detailEmployee);
             }
             else{
-                return view('sales.detailtebus', compact('detailgadai'));
+                return view('sales.detailtebus', compact('detailgadai', 'detailEmployeeJson'));
             }
         }
     }
@@ -229,7 +235,7 @@ class SalesController extends Controller
         $detailtebus->status = 'lunas';
         $detailtebus->save();
 
-        return redirect('tebus')->with('alert', 'Detail tebus berhasil di checkout ! Silahkan melanjutkan transaksi');
+        return redirect('/')->with('alert', 'Detail tebus berhasil di checkout ! Silahkan melanjutkan transaksi');
     }
     //penggadaian dan tebus
 }

@@ -100,7 +100,7 @@
                                                         Sales
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="namasales" required autofocus>
+                                                        <input type="text" name="namasales" value="{{$employeeDetail->name}}" required autofocus>
                                                     </div>
                                                 </div>
                                             </div>

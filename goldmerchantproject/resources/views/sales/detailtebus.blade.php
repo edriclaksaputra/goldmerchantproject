@@ -28,7 +28,7 @@
                                                         Tanggal Tebus
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="tanggaltebus" id="todaydate" required autofocus>
+                                                        <input type="text" name="tanggaltebus" id="todaydate" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -48,7 +48,7 @@
                                                         Tanggal Gadai
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="tanggalgadai" required autofocus disabled value={{$detailgadai->tanggalgadai}}>
+                                                        <input type="text" name="tanggalgadai" required autofocus readonly value={{$detailgadai->tanggalgadai}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,7 +58,7 @@
                                                         Nama
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="namapenggadai" required autofocus value={{$detailgadai->namapenggadai}}>
+                                                        <input type="text" name="namapenggadai" required readonly autofocus value={{$detailgadai->namapenggadai}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -68,7 +68,7 @@
                                                         Alamat
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="alamat" required autofocus value={{$detailgadai->alamat}}>
+                                                        <input type="text" name="alamat" required autofocus readonly value={{$detailgadai->alamat}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,7 +78,7 @@
                                                         Pinjam
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="totalpinjam" required autofocus disabled value={{$detailgadai->totalpinjam}}>
+                                                        <input type="text" name="totalpinjam" required autofocus readonly value={{$detailgadai->totalpinjam}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,7 +88,7 @@
                                                         Jaminan
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="jaminan" required autofocus disabled value={{$detailgadai->namabarang}}>
+                                                        <input type="text" name="jaminan" required autofocus readonly value={{$detailgadai->namabarang}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@
                                                         Sales
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="salestebus" required autofocus>
+                                                        <input type="text" name="salestebus" value="{{$detailEmployeeJson->name}}" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>

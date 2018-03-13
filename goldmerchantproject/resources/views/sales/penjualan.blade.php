@@ -83,7 +83,7 @@
                                                     Tanggal
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <input type="text" name="tanggalpenjualan" id="todaydate" required autofocus>
+                                                    <input type="text" name="tanggalpenjualan" id="todaydate" required autofocus readonly>
                                                 </div>
                                             </div>
                                         </div>

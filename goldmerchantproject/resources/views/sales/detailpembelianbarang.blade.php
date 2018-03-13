@@ -41,7 +41,7 @@
                                                         Barcode Penjualan
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <input type="text" name="idpenjualan" required autofocus value={{$detailPenjualan->id}}>
+                                                        <input type="text" name="idpenjualan" readonly required autofocus value={{$detailPenjualan->id}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -55,7 +55,7 @@
                                                         Tanggal Penjualan
                                                     </div>
                                                     <div class="col-lg-1">
-                                                        <input type="text" name="tanggalPenjualan" required autofocus value={{$detailPenjualan->tanggal}}>
+                                                        <input type="text" name="tanggalPenjualan" required readonly autofocus value={{$detailPenjualan->tanggal}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,7 +67,7 @@
                                                     </div>
                                                     <div class="col-lg-1">
                                                         @if($detailPenjualan != null)
-                                                        <input type="text" name="namaPenjual" required autofocus value={{$detailPenjualan->nama}}>
+                                                        <input type="text" name="namaPenjual" required readonly autofocus value={{$detailPenjualan->nama}}>
                                                         @else
                                                         <input type="text" name="namaPenjual" required autofocus>
                                                         @endif
@@ -81,7 +81,7 @@
                                                     </div>
                                                     <div class="col-lg-1">
                                                         @if($detailPenjualan != null)
-                                                        <input type="text" name="alamatPenjual" required autofocus value={{$detailPenjualan->alamat}}>
+                                                        <input type="text" name="alamatPenjual" required readonly autofocus value={{$detailPenjualan->alamat}}>
                                                         @else
                                                         <input type="text" name="alamatPenjual" required autofocus>
                                                         @endif
@@ -95,7 +95,7 @@
                                                         Kode Barang
                                                     </div>
                                                     <div class="col-lg-1">
-                                                        <input type="text" name="stokLimit" required autofocus value={{$detailPenjualan->barangs_id}}>
+                                                        <input type="text" name="stokLimit" required readonly autofocus value={{$detailPenjualan->barangs_id}}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +108,7 @@
                                                     <div class="col-sm-3">
                                                         <select class="form-control" name="jenisbarang">
                                                             @if($detailPenjualan != null)
-                                                            <option selected>{{$detailPenjualan->barangs->jenis}}</option>
+                                                            <option selected readonly>{{$detailPenjualan->barangs->jenis}}</option>
                                                             @endif
                                                             <option>Gelang</option>
                                                             <option>Kalung</option>
@@ -126,7 +126,7 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         @if($detailPenjualan != null)
-                                                        <input type="text" name="namajenis" required autofocus value={{$detailPenjualan->barangs->namajenis}}>
+                                                        <input type="text" name="namajenis" required readonly autofocus value={{$detailPenjualan->barangs->namajenis}}>
                                                         @else
                                                         <input type="text" name="namajenis" required autofocus>
                                                         @endif
@@ -140,7 +140,7 @@
                                                     </div>
                                                     <div class="col-lg-1">
                                                         @if($detailPenjualan != null)
-                                                        <input type="text" name="ukuran" value={{$detailPenjualan->barangs->ukuran}}>
+                                                        <input type="text" name="ukuran" readonly value={{$detailPenjualan->barangs->ukuran}}>
                                                         @else
                                                         <input type="text" name="ukuran" required autofocus>
                                                         @endif
@@ -154,12 +154,24 @@
                                                         Berat Sebelumnya(gram)
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <input type="text" name="beratasli" required autofocus value={{$detailPenjualan->barangs->beratasli}}>
+                                                        <input type="text" name="beratasli" required readonly autofocus value={{$detailPenjualan->barangs->beratasli}}>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <hr>
                                             @endif
+                                            @if($detailPenjualan != null)
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
+                                                        Kadar Sebelumnya
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input type="text" name="beratasli" required readonly autofocus value={{$detailPenjualan->barangs->kadar}}>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            <hr>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     @if($detailPenjualan != null)
@@ -179,14 +191,10 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="panel-heading col-lg-3">
-                                                        Kadar
+                                                        Kadar Sekarang
                                                     </div>
                                                     <div class="col-lg-1">
-                                                        @if($detailPenjualan != null)
-                                                        <input type="text" name="kadar" value={{$detailPenjualan->barangs->kadar}}>
-                                                        @else
                                                         <input type="text" name="kadar" required autofocus>
-                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,7 +204,7 @@
                                                         Tanggal Pembelian
                                                     </div>
                                                     <div class="col-lg-1">
-                                                        <input type="text" name="tanggalbeli"  id="todaydate" required autofocus>
+                                                        <input type="text" name="tanggalbeli"  id="todaydate" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>

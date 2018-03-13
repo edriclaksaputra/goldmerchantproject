@@ -34,7 +34,7 @@ Route::post('/detailbarangpenjualan', 'SalesController@detailbarangpenjualan')->
 Route::post('/inputpenjualan', 'SalesController@inputpenjualan')->name('inputpenjualan');
 
 Route::get('/pembelian', 'SalesController@pembelian')->name('pembelian');
-Route::get('/pembeliandalam', 'SalesController@pembeliandalam')->name('pembeliandalam');
+Route::post('/pembeliandalam', 'SalesController@pembeliandalam')->name('pembeliandalam');
 Route::post('/detailpembelianbarang', 'SalesController@detailpembelianbarang')->name('detailpembelianbarang');
 Route::post('/inputdatapembelian', 'SalesController@inputdatapembelian')->name('inputdatapembelian');
 Route::get('/gadai', 'SalesController@gadai')->name('gadai');
