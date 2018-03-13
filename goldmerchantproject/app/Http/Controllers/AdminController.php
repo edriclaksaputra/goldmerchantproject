@@ -74,6 +74,17 @@ class AdminController extends Controller
         $dateformat = Input::get('tanggalmasuk');
         $newBarang->tanggalmasuk = Carbon::parse($dateformat);
         $newBarang->keterangan = Input::get('keterangan');
+
+        if(!empty($_POST['photo'])){
+          $encoded_data = $_POST['photo'];
+            $binary_data = base64_decode( $encoded_data );
+
+            // save to server (beware of permissions // set ke 775 atau 777)
+            $namafoto = uniqid().".png";
+            $result = file_put_contents('../public/images/products/'.$namafoto, $binary_data );
+            $newBarang->foto = '/images/products/'.$namafoto;
+            if (!$result) die("Could not save image!  Check file permissions.");
+        }
         $newBarang->save();
 
         return redirect('inputbaru')->with('alert', 'Barang baru telah berhasil disimpan ! Silahkan melanjutkan pekerjaan anda');

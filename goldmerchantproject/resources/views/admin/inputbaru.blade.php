@@ -32,12 +32,15 @@
                                                     Gambar Terlampir
                                                 </div>
                                                 <div class="panel-body text-center">
-                                                    <img id="uploadphoto" name="uploadphoto" src="#" alt="Masukan Gambar" width="50%" height="50%"/>
+                                                    <div id="camera"></div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <div class="form-group">
-                                                        <label>Ambil Gambar</label>
-                                                        <input type='file' onchange="readURL(this);"/>
+                                                    <div class="form-group" id="webcam">
+                                                        <input type=button value="Ambil Gambar" onClick="preview()" class="btn btn-info" required autofocus>
+                                                    </div>
+                                                    <div id="simpan" style="display:none">
+                                                        <input type=button value="Remove" onClick="batal()" class="btn btn-warning">
+                                                        <!-- <input type=button value="Save" onClick="simpan()" style="font-weight:bold;" class="btn btn-success"> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -260,7 +263,8 @@
                                             <div class="row">
                                                 <div class="col-lg-12 text-right">
                                                     <div class="panel-heading col-lg-2">
-                                                        <button type="Submit" class="btn btn-success">Submit and Print Barcode</button>
+                                                        <input type="hidden" name="photo" id="photo" required autofocus>
+                                                        <button type="Submit" class="btn btn-success" onclick="simpan()">Submit and Print Barcode</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -299,4 +303,43 @@
 <script>
     var d = new Date();
     document.getElementById("todaydate").value = d.toDateString();
+</script>
+<script src="../js/webcamjs-master/webcam.min.js"></script>
+<script language="Javascript">
+    // konfigursi webcam
+    Webcam.set({
+        width: 440,
+        height: 360,
+        image_format: 'jpg',
+        jpeg_quality: 100
+    });
+    Webcam.attach( '#camera' );
+
+    function preview() {
+        // untuk preview gambar sebelum di upload
+        Webcam.freeze();
+        // ganti display webcam menjadi none dan simpan menjadi terlihat
+        document.getElementById('webcam').style.display = 'none';
+        document.getElementById('simpan').style.display = '';
+    }
+    
+    function batal() {
+        // batal preview
+        Webcam.unfreeze();
+        
+        // ganti display webcam dan simpan seperti semula
+        document.getElementById('webcam').style.display = '';
+        document.getElementById('simpan').style.display = 'none';
+    }
+    
+    function simpan() {
+        // ambil foto
+        Webcam.snap( function(data_uri) {
+            var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+
+            document.getElementById('photo').value = raw_image_data;
+            document.getElementById('webcam').style.display = '';
+            document.getElementById('simpan').style.display = 'none';
+        } );
+    }
 </script>
