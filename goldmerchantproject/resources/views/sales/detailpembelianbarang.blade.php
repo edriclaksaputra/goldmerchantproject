@@ -24,8 +24,7 @@
                                                     Gambar Barang
                                                 </div>
                                                 <div class="panel-body text-center">
-                                                    <img alt="icon" src="../images/image.jpg" width="50%" height="50%" />
-                                                    <p>*gambar pembanding</p>
+                                                    <img alt="foto produk" src="{{$detailPenjualan->barangs->foto}}" width="50%" height="50%" />
                                                 </div>
                                             </div>
                                         </div>

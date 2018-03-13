@@ -67,12 +67,8 @@
                                                 Gambar Terlampir
                                             </div>
                                             <div class="panel-body text-center">
-                                                <img alt="gambar barang" src="images/image.jpg" width="50%" height="50%" />
-                                                <p>*gambar ilustrasi</p>
+                                                <img alt="gambar barang" src="{{$databarang->foto}}" width="50%" height="50%" />
                                             </div>
-                                        </div>
-                                        <div class="col-lg-12 text-center">
-                                            <img alt="barcode" src="../images/barcode.png" width="50%" height="50%"/>
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
