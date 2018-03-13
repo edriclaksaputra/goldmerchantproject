@@ -25,9 +25,6 @@
                                     <h3>3. Data Baki</h3>
                                     <p>Memberikan detail barang apa saja yang terdapat dalam baki</p>
                                 </div>
-                                <!-- <div class="container text-center" style="border: 1px solid #a1a1a1;padding: 15px;width: 70%;">
-                                    {!! DNS1D::getBarcode(1, 'C39')!!}
-                                </div> -->
                             </div>
                             <!-- /.panel-body -->
                         </div>

@@ -19,11 +19,11 @@ class AdminController extends Controller
     public function databaki()
     {
         $databaki = null;
-        // $int = 12530;
-        // $biner = decbin($int);
-        // $binerlong = str_pad($biner, 16, '0', STR_PAD_LEFT);
-        // dd($binerlong);
-        return view('admin.databaki', compact('databaki'));
+        $int = 123;
+        $biner = decbin($int);
+        $binerlong = str_pad($biner, 8, '0', STR_PAD_LEFT);
+
+        return view('admin.databaki', compact('databaki', 'binerlong'));
     }
 
     public function detaildatabaki()
@@ -41,7 +41,7 @@ class AdminController extends Controller
 
         $validator = Validator::make($request->all(), [
             'jenisbarang' => 'required|string',
-            'ukuranbarang' => 'required|integer',
+            'ukuranbarang' => 'required|string',
             'namabarang' => 'required|string',
             'beratasli' => 'required|between:0,99.99',
             'beratpembulatan' => 'required|between:0,99.99',
