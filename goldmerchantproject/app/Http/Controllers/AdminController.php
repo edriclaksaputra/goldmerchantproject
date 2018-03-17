@@ -80,7 +80,7 @@ class AdminController extends Controller
             $binary_data = base64_decode( $encoded_data );
 
             // save to server (beware of permissions // set ke 775 atau 777)
-            $namafoto = uniqid().".png";
+            $namafoto = uniqid().".jpeg";
             $result = file_put_contents('../public/images/products/'.$namafoto, $binary_data );
             $newBarang->foto = '/images/products/'.$namafoto;
             if (!$result) die("Could not save image!  Check file permissions.");

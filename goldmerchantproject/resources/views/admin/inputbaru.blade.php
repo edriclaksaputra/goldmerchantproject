@@ -24,7 +24,7 @@
                                 <div class="col-lg-12">
                                     <form method="post" action="/inputbaru.insertbarangbaru" enctype="multipart/form-data">
                                         {{ csrf_field() }}
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-5">
                                             <br>
                                             <div class="panel panel-primary col-lg-12">
                                                 <br>
@@ -35,7 +35,7 @@
                                                     <div id="camera"></div>
                                                 </div>
                                                 <div class="panel-footer">
-                                                    <div class="form-group" id="webcam">
+                                                    <div id="webcam">
                                                         <input type=button value="Ambil Gambar" onClick="preview()" class="btn btn-info" required autofocus>
                                                     </div>
                                                     <div id="simpan" style="display:none">
@@ -48,7 +48,7 @@
                                                 <img alt="barcode" src="../images/barcode.png" width="50%" height="50%"/>
                                             </div> -->
                                         </div>
-                                        <div class="col-lg-8">
+                                        <div class="col-lg-7">
                                             <br>
                                             <!-- <div class="row">
                                                 <div class="col-lg-12">
@@ -236,7 +236,7 @@
                                                     <div class="panel-heading col-lg-2 {{ $errors->has('baki') ? ' has-error' : '' }}">
                                                         Baki
                                                     </div>
-                                                    <div class="col-lg-2">
+                                                    <div class="col-lg-3">
                                                         <select class="form-control" name="baki" required autofocus>
                                                             <option selected>Dalam</option>
                                                             <option>Luar</option>
@@ -306,16 +306,28 @@
 </script>
 <script src="../js/webcamjs-master/webcam.min.js"></script>
 <script language="Javascript">
+    // preload shutter audio clip
+    var shutter = new Audio();
+    shutter.autoplay = false;
+    shutter.src = ('capture.mp3');
+
+    var dummycam = Webcam;
     // konfigursi webcam
     Webcam.set({
-        width: 440,
-        height: 360,
-        image_format: 'jpg',
-        jpeg_quality: 100
+        width: 640,
+        height: 480,
+        image_format: 'jpeg',
+        jpeg_quality: 100,
+        constraints: {
+            width: 640, // { exact: 320 },
+            height: 480, // { exact: 180 },
+        }
     });
     Webcam.attach( '#camera' );
 
     function preview() {
+        shutter.play();
+
         // untuk preview gambar sebelum di upload
         Webcam.freeze();
         // ganti display webcam menjadi none dan simpan menjadi terlihat
