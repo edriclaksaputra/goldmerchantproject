@@ -32,5 +32,8 @@ class HomeController extends Controller
         else if(Auth::user()->job == 'Kasir'){
             return redirect('validasitransaksi');
         }
+        else if(Auth::user()->job == 'Owner'){
+            return redirect('ownerdashboard');
+        }
     }
 }

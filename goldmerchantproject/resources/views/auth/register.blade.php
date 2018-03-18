@@ -70,6 +70,7 @@
                                     <option>Admin</option>
                                     <option>Sales</option>
                                     <option>Kasir</option>
+                                    <option>Owner</option>
                                 </select>
                                 @if ($errors->has('job'))
                                     <span class="help-block">

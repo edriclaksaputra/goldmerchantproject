@@ -50,3 +50,12 @@ Route::post('/usercheck.validation', 'SalesController@usercheckvalidation')->nam
 //Route Kasir
 Route::get('/validasitransaksi', 'KasirController@index')->name('validasitransaksi');
 Route::post('/validasitransaksi.validasi', 'KasirController@validasi')->name('validasi');
+
+//Route Owner
+Route::get('/ownerdashboard', 'OwnerController@welcome')->name('ownerdashboard');
+Route::get('/laporanbarang', 'OwnerController@laporanbarang')->name('laporanbarang');
+Route::get('/laporanpenjualan', 'OwnerController@laporanpenjualan')->name('laporanpenjualan');
+Route::get('/laporanpembelian', 'OwnerController@laporanpembelian')->name('laporanpembelian');
+Route::get('/laporangadai', 'OwnerController@laporangadai')->name('laporangadai');
+Route::get('/laporankeuangan', 'OwnerController@laporankeuangan')->name('laporankeuangan');
+Route::get('/settupemployee', 'OwnerController@setupemployee')->name('setupemployee');

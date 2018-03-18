@@ -1,110 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>Gold Merchant | Kasir</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- MetisMenu CSS -->
-        <link href="../css/metisMenu.min.css" rel="stylesheet">
-
-        <!-- DataTables CSS -->
-        <link href="../css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-
-        <!-- DataTables Responsive CSS -->
-        <link href="../css/dataTables/dataTables.responsive.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="../css/startmin.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-
-        <div id="wrapper">
-
-            <!-- Navigation -->
-            <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html" style="color: white">Toko Mas Arjuna Putra</a>
-                </div>
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <ul class="nav navbar-right navbar-top-links">
-                    <li style="color: white"><i class="fa fa-home fa-fw"></i>Welcome Owner !</li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-sign-out"></i>logout
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.navbar-top-links -->
-
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-                            <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                                </div>
-                                <!-- /input-group -->
-                            </li>
-                            <li>
-                                <a href="laporanBarang.html"><i class="fa fa-book"></i> Laporan Barang</a>
-                            </li>
-                            <li>
-                                <a href="laporanPenjualan.html"><i class="fa fa-bookmark"></i> Laporan Penjualan</a>
-                            </li>
-                            <li>
-                                <a href="laporanPembelian.html"><i class="fa fa-info-circle"></i> Laporan Pembelian</a>
-                            </li>
-                             <li>
-                                <a href="laporanGadai.html"><i class="fa fa-info"></i> Laporan Gadai</a>
-                            </li>
-                             <li>
-                                <a href="laporanKeuangan.html"><i class="fa fa-copy"></i> Laporan Keuangan</a>
-                            </li>
-                             <li>
-                                <a href="settup.html"><i class="fa fa-file-text"></i> Setup</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.sidebar-collapse -->
-                </div>
-                <!-- /.navbar-static-side -->
-            </nav>
-
+@include('owner.layouts.header')
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Laporan Penjualan</h1>
+                        <h1 class="page-header">Laporan Pembelian</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -146,7 +44,7 @@
                                     </table>
                                     <div class="row col-lg-12">
                                         <div class="col-lg-6 text-left">
-                                            <a href="GrafikPenjualan.html" style="text-decoration: none"><button type="button" class="btn btn-success">Lihat Grafik</button></a>
+                                            <a href="grafikPembelian.html" style="text-decoration: none"><button type="button" class="btn btn-success">Lihat Grafik</button></a>
                                             <button type="button" class="btn btn-primary" style="float: right;">Print</button>
                                         </div>
                                     </div>
@@ -166,7 +64,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Nota Penjualan</h4>
+                                <h4 class="modal-title" id="myModalLabel">Nota Pembelian</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="panel panel-primary col-lg-12">
@@ -179,7 +77,16 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <div class="panel-heading col-lg-8">Kode Nota</div>
+                                                <div class="panel-heading col-lg-8">Barcode N. Jual</div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="FB-150917-0001" disabled></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="panel-heading col-lg-8">Kode N. Beli</div>
                                             </td>
                                             <td>
                                                 <div class="col-lg-4"><input type="text" name="stokLimit" value="FJ-170917-0001" disabled></div>
@@ -251,6 +158,24 @@
 
                                         <tr>
                                             <td>
+                                                <div class="panel-heading col-lg-8">Berat Skr (gram)</div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="1" disabled></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="panel-heading col-lg-8">Kondisi</div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="Bagus" disabled></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
                                                 <div class="panel-heading col-lg-8">Harga</div>
                                             </td>
                                             <td>
@@ -260,25 +185,16 @@
 
                                         <tr>
                                             <td>
-                                                <div class="panel-heading col-lg-8">Supplier</div>
-                                            </td>
-                                            <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="UBS" disabled></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="panel-heading col-lg-8">Kadar</div>
-                                            </td>
-                                            <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="375" disabled></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
                                                 <div class="panel-heading col-lg-8">Ongkos</div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="15000" disabled></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="panel-heading col-lg-8">Ongkos Lain-lain</div>
                                             </td>
                                             <td>
                                                 <div class="col-lg-4"><input type="text" name="stokLimit" value="0" disabled></div>
@@ -319,31 +235,4 @@
 
         </div>
         <!-- /#wrapper -->
-
-        <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
-
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../js/metisMenu.min.js"></script>
-
-        <!-- DataTables JavaScript -->
-        <script src="../js/dataTables/jquery.dataTables.min.js"></script>
-        <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="../js/startmin.js"></script>
-
-        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-        <script>
-            $(document).ready(function() {
-                $('#dataTables-example').DataTable({
-                        responsive: true
-                });
-            });
-        </script>
-
-    </body>
-</html>
+@include('owner.layouts.footer')
