@@ -53,7 +53,15 @@ Route::post('/validasitransaksi.validasi', 'KasirController@validasi')->name('va
 
 //Route Owner
 Route::get('/ownerdashboard', 'OwnerController@welcome')->name('ownerdashboard');
-Route::get('/laporanbarang', 'OwnerController@laporanbarang')->name('laporanbarang');
+//laporanbarang
+//dalam
+Route::get('/laporanbarang.dalam', 'OwnerController@laporanbarangdalam')->name('laporanbarang');
+Route::post('/laporanbarang.dalam.edit', 'OwnerController@laporanbarangdalamedit')->name('laporanbarangdalamedit');
+//dalam
+Route::get('/laporanbarang.baki', 'OwnerController@laporanbarangbaki')->name('laporanbarang');
+Route::get('/laporanbarang.sepuh', 'OwnerController@laporanbarangsepuh')->name('laporanbarang');
+Route::get('/laporanbarang.rongsok', 'OwnerController@laporanbarangrongsok')->name('laporanbarang');
+
 Route::get('/laporanpenjualan', 'OwnerController@laporanpenjualan')->name('laporanpenjualan');
 Route::get('/laporanpembelian', 'OwnerController@laporanpembelian')->name('laporanpembelian');
 Route::get('/laporangadai', 'OwnerController@laporangadai')->name('laporangadai');

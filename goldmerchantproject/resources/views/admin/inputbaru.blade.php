@@ -195,12 +195,12 @@
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="kondisi[]" value="Pekok kecil">Pekok kecil
+                                                                <input type="checkbox" name="kondisi[]" value="Pekok Kecil">Pekok Kecil
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">
                                                             <label>
-                                                                <input type="checkbox" name="kondisi[]" value="Pekok parah">Pekok parah
+                                                                <input type="checkbox" name="kondisi[]" value="Pekok Parah">Pekok Parah
                                                             </label>
                                                         </div>
                                                         <div class="checkbox">

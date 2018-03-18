@@ -17,48 +17,36 @@
                             <div class="panel-body">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="laporanbarang.dalam">Barang Dalam</a>
+                                    <li><a href="laporanbarang.dalam">Barang Dalam</a>
                                     </li>
                                     <li><a href="laporanbarang.baki">Barang Baki</a>
                                     </li>
                                     <li><a href="laporanbarang.sepuh">Barang Sepuh</a>
                                     </li>
-                                    <li><a href="laporanbarang.rongsok">Barang Rongsok</a>
+                                    <li class="active"><a href="laporanbarang.rongsok">Barang Rongsok</a>
                                     </li>
                                 </ul>
 
                                 <!-- Tab panes -->
-                                <div class="tab-content col-lg-10">
-                                    <div class="tab-pane fade in active" id="barangdalam">
-                                        <h4>Barang Dalam</h4>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="barangrongsok">
+                                        <h4>Barang Rongsok</h4>
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
                                                     <th>Tanggal Masuk</th>
-                                                    <th class="col-lg-1">Kode Barang</th>
+                                                    <th>Kode Barang</th>
                                                     <th>Jenis</th>
-                                                    <th>Nama</th>
                                                     <th>Berat (gram)</th>
-                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($barangdalam as $detailbarang)
-                                                    <tr class="odd gradeX">
-                                                        <form method="post" action="/laporanbarang.dalam.edit" enctype="multipart/form-data">
-                                                            {{ csrf_field() }}
-                                                            <td>{{$detailbarang->tanggalmasuk}}</td>
-                                                            <td>{{$detailbarang->id}}</td>
-                                                            <td>{{$detailbarang->jenis}}</td>
-                                                            <td>{{$detailbarang->namajenis}}</td>
-                                                            <td>{{$detailbarang->beratasli}}</td>
-                                                            <td>
-                                                                <button type="submit" class="btn btn-info">Edit Barang</button>
-                                                                <input type="hidden" name="idbarang" value="{{$detailbarang->id}}">
-                                                            </td>
-                                                        </form>
-                                                    </tr>
-                                                @endforeach
+                                                <tr class="odd gradeX">
+                                                    <td>15-Sep-2017</td>
+                                                    <td>GL-001</td>
+                                                    <td>Gelang</td>
+                                                    <td>1.050</td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

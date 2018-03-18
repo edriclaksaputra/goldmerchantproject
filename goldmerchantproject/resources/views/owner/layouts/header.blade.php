@@ -90,9 +90,9 @@
                             </li>
                             <li>
                                 <li>
-                                    <a href="laporanbarang"><i class="fa fa-book"></i> Laporan Barang</a>
+                                    <a href="laporanbarang.dalam"><i class="fa fa-book"></i> Laporan Barang</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="laporanpenjualan"><i class="fa fa-bookmark"></i> Laporan Penjualan</a>
                                 </li>
                                 <li>
@@ -106,7 +106,7 @@
                                 </li>
                                  <li>
                                     <a href="settupemployee"><i class="fa fa-file-text"></i> Setup Employee</a>
-                                </li>
+                                </li> -->
                             </li>
                         </ul>
                     </div>

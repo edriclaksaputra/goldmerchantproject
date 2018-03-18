@@ -44,7 +44,7 @@
                                     </table>
                                     <div class="row col-lg-12">
                                         <div class="col-lg-6 text-left">
-                                            <a href="GrafikPenjualan.html" style="text-decoration: none"><button type="button" class="btn btn-success">Lihat Grafik</button></a>
+                                            <a href="grafikpenjualan" style="text-decoration: none"><button type="button" class="btn btn-success">Lihat Grafik</button></a>
                                             <button type="button" class="btn btn-primary" style="float: right;">Print</button>
                                         </div>
                                     </div>
