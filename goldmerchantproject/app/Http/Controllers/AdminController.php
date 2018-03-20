@@ -87,7 +87,7 @@ class AdminController extends Controller
         }
         $newBarang->save();
 
-        return redirect('inputbaru')->with('alert', 'Barang baru telah berhasil disimpan ! Silahkan melanjutkan pekerjaan anda');
+        return redirect('laporanbarang.dalam')->with('alert', 'Barang telah berhasil di update ! Silahkan melanjutkan pekerjaan anda');
     }
 
     public function inputbaki(){

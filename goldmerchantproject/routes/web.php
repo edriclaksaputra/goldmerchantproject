@@ -57,6 +57,7 @@ Route::get('/ownerdashboard', 'OwnerController@welcome')->name('ownerdashboard')
 //dalam
 Route::get('/laporanbarang.dalam', 'OwnerController@laporanbarangdalam')->name('laporanbarang');
 Route::post('/laporanbarang.dalam.edit', 'OwnerController@laporanbarangdalamedit')->name('laporanbarangdalamedit');
+Route::post('/laporanbarang.dalam.edit.proses', 'OwnerController@laporanbarangdalameditproses')->name('laporanbarangdalameditproses');
 //dalam
 Route::get('/laporanbarang.baki', 'OwnerController@laporanbarangbaki')->name('laporanbarang');
 Route::get('/laporanbarang.sepuh', 'OwnerController@laporanbarangsepuh')->name('laporanbarang');

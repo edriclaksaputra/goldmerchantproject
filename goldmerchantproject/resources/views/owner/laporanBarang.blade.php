@@ -6,6 +6,16 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        @if (session('alert'))
+                            <div class="alert alert-success">
+                                <h4> {{ session('alert') }} </h4>
+                            </div>
+                        @endif
+                    </div>
+                </div>
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
