@@ -68,11 +68,49 @@ class OwnerController extends Controller
         return redirect('/laporanbarang.dalam')->with('alert', 'Barang telah berhasil di update ! Silahkan melanjutkan pekerjaan anda');
     }
     //dalam
+    //baki
     public function laporanbarangbaki()
     {
-        return view ('owner.laporanbarangbaki');
+        $barangbaki = Barang::where('stok', '!=', 'Dalam')->get();
+        return view ('owner.laporanbarangbaki', compact('barangbaki'));
     }
 
+    public function laporanbarangbakiedit()
+    {
+        $idbarang = Input::get('idbarang');
+        $detailbarang = Barang::find($idbarang);
+        $kondisibarang = explode(',', $detailbarang->status);
+        unset($kondisibarang[count($kondisibarang)-1]);
+        return view ('owner.editbarangbaki', compact('detailbarang', 'kondisibarang'));
+    }
+
+    public function laporanbarangbakieditproses()
+    {
+        $idbarang = Input::get('idbarang');
+        $barangedit = Barang::find($idbarang);
+
+        $barangedit->jenis = Input::get('jenisbarang');
+        $barangedit->ukuran = Input::get('ukuran');
+        $barangedit->namajenis = Input::get('namabarang');
+        $barangedit->beratasli = Input::get('beratasli');
+        $barangedit->beratpembulatan = Input::get('beratbulat');
+        $barangedit->kadar = Input::get('kadar');
+        $barangedit->supplier = Input::get('supplier');
+        $barangedit->hargagram = Input::get('hargajual');
+
+        $kondisi = Input::get('kondisi');
+        $barangedit->status = "";
+        for ($i=0; $i < count($kondisi); $i++) {
+            $barangedit->status = $barangedit->status.$kondisi[$i].',';
+        }
+        $barangedit->stok = Input::get('stokbarang');
+        $barangedit->keterangan = Input::get('keterangan');
+
+        $barangedit->save();
+
+        return redirect('/laporanbarang.baki')->with('alert', 'Barang telah berhasil di update ! Silahkan melanjutkan pekerjaan anda');
+    }
+    //baki
     public function laporanbarangsepuh()
     {
         return view ('owner.laporanbarangsepuh');

@@ -59,9 +59,13 @@ Route::get('/laporanbarang.dalam', 'OwnerController@laporanbarangdalam')->name('
 Route::post('/laporanbarang.dalam.edit', 'OwnerController@laporanbarangdalamedit')->name('laporanbarangdalamedit');
 Route::post('/laporanbarang.dalam.edit.proses', 'OwnerController@laporanbarangdalameditproses')->name('laporanbarangdalameditproses');
 //dalam
-Route::get('/laporanbarang.baki', 'OwnerController@laporanbarangbaki')->name('laporanbarang');
-Route::get('/laporanbarang.sepuh', 'OwnerController@laporanbarangsepuh')->name('laporanbarang');
-Route::get('/laporanbarang.rongsok', 'OwnerController@laporanbarangrongsok')->name('laporanbarang');
+//baki
+Route::get('/laporanbarang.baki', 'OwnerController@laporanbarangbaki')->name('laporanbarangbaki');
+Route::post('/laporanbarang.baki.edit', 'OwnerController@laporanbarangbakiedit')->name('laporanbarangbakiedit');
+Route::post('/laporanbarang.baki.edit.proses', 'OwnerController@laporanbarangbakieditproses')->name('laporanbarangbakieditproses');
+//baki
+Route::get('/laporanbarang.sepuh', 'OwnerController@laporanbarangsepuh')->name('laporanbarangsepuh');
+Route::get('/laporanbarang.rongsok', 'OwnerController@laporanbarangrongsok')->name('laporanbarangrongsok');
 
 Route::get('/laporanpenjualan', 'OwnerController@laporanpenjualan')->name('laporanpenjualan');
 Route::get('/laporanpembelian', 'OwnerController@laporanpembelian')->name('laporanpembelian');

@@ -6,6 +6,16 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        @if (session('alert'))
+                            <div class="alert alert-success">
+                                <h4> {{ session('alert') }} </h4>
+                            </div>
+                        @endif
+                    </div>
+                </div>
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -28,14 +38,14 @@
                                 </ul>
 
                                 <!-- Tab panes -->
-                                <div class="tab-content">
+                                <div class="tab-content col-lg-10">
                                     <div class="tab-pane fade in active" id="barangdalam">
-                                        <h4>Barang Baki</h4>
+                                        <h4>Barang Dalam</h4>
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
                                                     <th>Tanggal Masuk</th>
-                                                    <th>Kode Barang</th>
+                                                    <th class="col-lg-1">Kode Barang</th>
                                                     <th>Jenis</th>
                                                     <th>Nama</th>
                                                     <th>Berat (gram)</th>
@@ -44,45 +54,23 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="odd gradeX">
-                                                    <td>15-Sep-2017</td>
-                                                    <td>GL-001</td>
-                                                    <td>Gelang</td>
-                                                    <td>Rantai Variasi</td>
-                                                    <td>1.050</td>
-                                                    <td>1</td>
-                                                    <td>
-                                                        <a href="editbarangbaki.html">
-                                                            <button class="btn btn-warning">Edit Barang</button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td>15-Sep-2017</td>
-                                                    <td>GL-001</td>
-                                                    <td>Gelang</td>
-                                                    <td>Rantai Variasi</td>
-                                                    <td>1.050</td>
-                                                    <td>2</td>
-                                                    <td>
-                                                        <a href="editbarangbaki.html">
-                                                            <button class="btn btn-warning">Edit Barang</button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td>15-Sep-2017</td>
-                                                    <td>GL-001</td>
-                                                    <td>Gelang</td>
-                                                    <td>Rantai Variasi</td>
-                                                    <td>1.050</td>
-                                                    <td>3</td>
-                                                    <td>
-                                                        <a href="editbarangbaki.html">
-                                                            <button class="btn btn-warning">Edit Barang</button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                                @foreach($barangbaki as $detailbarang)
+                                                    <tr class="odd gradeX">
+                                                        <form method="post" action="/laporanbarang.baki.edit" enctype="multipart/form-data">
+                                                            {{ csrf_field() }}
+                                                            <td>{{$detailbarang->tanggalmasuk}}</td>
+                                                            <td>{{$detailbarang->id}}</td>
+                                                            <td>{{$detailbarang->jenis}}</td>
+                                                            <td>{{$detailbarang->namajenis}}</td>
+                                                            <td>{{$detailbarang->beratasli}}</td>
+                                                            <td>{{$detailbarang->stok}}</td>
+                                                            <td>
+                                                                <button type="submit" class="btn btn-success">Edit Barang</button>
+                                                                <input type="hidden" name="idbarang" value="{{$detailbarang->id}}">
+                                                            </td>
+                                                        </form>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
