@@ -28,7 +28,7 @@
                                 </ul>
 
                                 <!-- Tab panes -->
-                                <div class="tab-content">
+                                <div class="tab-content col-lg-10">
                                     <div class="tab-pane fade in active">
                                         <h4>Barang Sepuh</h4>
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -37,28 +37,20 @@
                                                     <th>Tanggal Masuk</th>
                                                     <th>Kode Barang</th>
                                                     <th>Jenis</th>
+                                                    <th>Nama Jenis</th>
                                                     <th>Berat (gram)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($barangsepuh as $detailbarangsepuh)
                                                 <tr class="odd gradeX">
-                                                    <td>15-Sep-2017</td>
-                                                    <td>GL-001</td>
-                                                    <td>Gelang</td>
-                                                    <td>1.050</td>
+                                                    <td>{{ Carbon\Carbon::parse($detailbarangsepuh->tanggalmasuk)->formatLocalized('%A %d %B %Y') }}</td>
+                                                    <td>{{$detailbarangsepuh->id}}</td>
+                                                    <td>{{$detailbarangsepuh->jenis}}</td>
+                                                    <td>{{$detailbarangsepuh->namajenis}}</td>
+                                                    <td>{{$detailbarangsepuh->beratasli}}</td>
                                                 </tr>
-                                                <tr class="odd gradeX">
-                                                    <td>12-Sep-2017</td>
-                                                    <td>GL-002</td>
-                                                    <td>Kalung</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td>13-Sep-2017</td>
-                                                    <td>GL-003</td>
-                                                    <td>Cincin</td>
-                                                    <td>2.035</td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                         <div class="col-lg-12">
@@ -66,10 +58,10 @@
                                                 
                                             </div>
                                             <div class="panel-heading col-lg-2 text-right">
-                                                Total Berat
+                                                Berat Total (gram)
                                             </div>
                                             <div class="col-lg-2">
-                                                <input type="text" name="stokLimit" value="">
+                                                <input type="text" name="stokLimit" value={{$berattotal}}>
                                             </div>
                                         </div>
                                     </div>

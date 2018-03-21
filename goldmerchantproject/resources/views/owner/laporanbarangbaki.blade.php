@@ -40,7 +40,7 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content col-lg-10">
                                     <div class="tab-pane fade in active" id="barangdalam">
-                                        <h4>Barang Dalam</h4>
+                                        <h4>Barang Baki</h4>
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>

@@ -113,7 +113,12 @@ class OwnerController extends Controller
     //baki
     public function laporanbarangsepuh()
     {
-        return view ('owner.laporanbarangsepuh');
+        $barangsepuh = Pembelian::where('kondisi', 'Sepuh')->get();
+        $berattotal = 0;
+        for ($i=0; $i < count($barangsepuh); $i++) {
+            $berattotal = $berattotal + $barangsepuh[$i]->beratasli;
+        }
+        return view ('owner.laporanbarangsepuh', compact('barangsepuh', 'berattotal'));
     }
 
     public function laporanbarangrongsok()
