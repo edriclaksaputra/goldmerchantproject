@@ -49,6 +49,7 @@ class KasirController extends Controller
     		else{
     			$transaksi = Gadaitebus::find($idtransaksi);
     			$transaksi->statusvalidasi = 1;
+                $transaksi->status = 'lunas';
     			$transaksi->save();
     			
     			return redirect('/validasitransaksi')->with('alert', 'Transaksi gadai telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');

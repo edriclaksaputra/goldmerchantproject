@@ -38,7 +38,7 @@
                                                 <th>Kode Barang</th>
                                                 <th>Jenis Barang</th>
                                                 <th>Nama Barang</th>
-                                                <th>Berat</th>
+                                                <th>Atas Nama</th>
                                                 <th>Total Transaksi</th>
                                                 <th>Sales</th>
                                                 <th>Validasi</th>
@@ -55,7 +55,7 @@
                                                     <td style="text-align: center">{{$listPenjualandetail->barangs_id}}</td>
                                                     <td style="text-align: center">{{$listPenjualandetail->barangs->jenis}}</td>
                                                     <td style="text-align: center">{{$listPenjualandetail->barangs->namajenis}}</td>
-                                                    <td style="text-align: center">{{$listPenjualandetail->barangs->beratasli}}</td>
+                                                    <td style="text-align: center">{{$listPenjualandetail->nama}}</td>
                                                     <td style="text-align: center">{{$listPenjualandetail->barangs->totalharga}}</td>
                                                     <td style="text-align: center">{{$listPenjualandetail->namasales}}</td>
                                                     <td style="text-align: center"><button type="submit" class="btn btn-success" name="result" value="accept">YES</button></td>
@@ -74,7 +74,7 @@
                                                     <td style="text-align: center">--</td>
                                                     <td style="text-align: center">{{$listPembeliandetail->jenis}}</td>
                                                     <td style="text-align: center">{{$listPembeliandetail->namajenis}}</td>
-                                                    <td style="text-align: center">{{$listPembeliandetail->beratasli}}</td>
+                                                    <td style="text-align: center">{{$listPembeliandetail->namapenjual}}</td>
                                                     <td style="text-align: center">{{$listPembeliandetail->totalharga}}</td>
                                                     <td style="text-align: center">{{$listPembeliandetail->namasales}}</td>
                                                     <td style="text-align: center"><button type="submit" class="btn btn-success" name="result" value="accept">YES</button></td>
@@ -93,7 +93,7 @@
                                                     <td style="text-align: center">--</td>
                                                     <td style="text-align: center">{{$listGadaidetail->namabarang}}</td>
                                                     <td style="text-align: center">--</td>
-                                                    <td style="text-align: center">--</td>
+                                                    <td style="text-align: center">{{$listGadaidetail->namapenggadai}}</td>
                                                     <td style="text-align: center">{{$listGadaidetail->totalpinjam}}</td>
                                                     <td style="text-align: center">{{$listGadaidetail->salesgadai}}</td>
                                                     <td style="text-align: center"><button type="submit" class="btn btn-success" name="result" value="accept">YES</button></td>

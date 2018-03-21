@@ -129,21 +129,27 @@ class OwnerController extends Controller
     //Laporan Barang
     public function laporanpenjualan()
     {
-        return view ('owner.laporanpenjualan');    }
+        $listpenjualan = Penjualan::where('statusvalidasi', 1)->get();
+        return view ('owner.laporanpenjualan', compact('listpenjualan'));    
+    }
 
     public function laporanpembelian()
     {
-        return view ('owner.laporanpembelian');    }
+        return view ('owner.laporanpembelian');    
+    }
 
     public function laporangadai()
     {
-        return view ('owner.laporangadai');    }
+        return view ('owner.laporangadai');    
+    }
 
     public function laporankeuangan()
     {
-        return view ('owner.laporankeuangan');    }
+        return view ('owner.laporankeuangan');    
+    }
 
     public function setupemployee()
     {
-        return view ('owner.settup');    }
+        return view ('owner.settup');    
+    }
 }

@@ -54,7 +54,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                <h3> Detail Nota </h3>
+                                <h4> Detail Nota </h4>
                             </div>
                             <div class="panel-body">
                                 <form action="/inputpenjualan" method="post" enctype="multipart/form-data">

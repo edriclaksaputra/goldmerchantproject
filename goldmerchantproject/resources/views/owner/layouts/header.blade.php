@@ -92,10 +92,10 @@
                                 <li>
                                     <a href="laporanbarang.dalam"><i class="fa fa-book"></i> Laporan Barang</a>
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <a href="laporanpenjualan"><i class="fa fa-bookmark"></i> Laporan Penjualan</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="laporanpembelian"><i class="fa fa-info-circle"></i> Laporan Pembelian</a>
                                 </li>
                                  <li>
