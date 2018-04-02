@@ -15,7 +15,7 @@
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
-                                <div class="dataTable_wrapper">
+                                <div class="dataTable_wrapper col-lg-10">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
@@ -30,21 +30,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($listpembelian as $detailpembelian)
                                             <tr class="odd gradeX">
-                                                <td>15-Sep-2017</td>
-                                                <td>FJ-150917-0001</td>
-                                                <td>Gelang</td>
-                                                <td>Rantai Variasi</td>
-                                                <td>1.050</td>
-                                                <td>200000</td>
-                                                <td>Lia</td>
-                                                <td><button type="button" class="btn btn-outline btn-info" data-toggle="modal" data-target="#myModal">Detail Nota</button></td>
+                                                <td>{{ Carbon\Carbon::parse($detailpembelian->tanggalmasuk)->formatLocalized('%A %d %B %Y') }}</td>
+                                                <td>{{$detailpembelian->id}}</td>
+                                                <td>{{$detailpembelian->jenis}}</td>
+                                                <td>{{$detailpembelian->namajenis}}</td>
+                                                <td>{{number_format($detailpembelian->beratasli, 0)}}</td>
+                                                <td>Rp {{ number_format($detailpembelian->totalharga, 2)}}</td>
+                                                <td>{{$detailpembelian->namasales}}</td>
+                                                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="notadetail('{{$detailpembelian->id}}', '{{ Carbon\Carbon::parse($detailpembelian->tanggal)->formatLocalized('%A %d %B %Y') }}', '{{$detailpembelian->namapenjual}}', '{{$detailpembelian->alamatpenjual}}', '{{$detailpembelian->id}}', '{{$detailpembelian->jenis}}', '{{$detailpembelian->namajenis}}', '{{$detailpembelian->beratasli}}', '{{$detailpembelian->hargagram}}', '{{$detailpembelian->namapenjual}}', '{{$detailpembelian->kadar}}', '{{$detailpembelian->totalharga}}', '{{$detailpembelian->namasales}}')">Detail Nota</button></td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                     <div class="row col-lg-12">
                                         <div class="col-lg-6 text-left">
-                                            <a href="grafikPembelian.html" style="text-decoration: none"><button type="button" class="btn btn-success">Lihat Grafik</button></a>
+                                            <a href="#" style="text-decoration: none"><button type="button" class="btn btn-success">Lihat Grafik</button></a>
                                             <button type="button" class="btn btn-primary" style="float: right;">Print</button>
                                         </div>
                                     </div>
@@ -64,32 +66,16 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Nota Pembelian</h4>
-                            </div>
+                                <h4 class="modal-title" id="myModalLabel">Nota Pembelian <label id="namabarang"></label></h4>
                             <div class="modal-body">
-                                <div class="panel panel-primary col-lg-12">
-                                    <br>
-                                    <div class="panel-body text-center">
-                                        <img alt="icon" src="../images/image.jpg" width="50%" height="50%" />
-                                    </div>
-                                </div>
                                 <table class="table table-striped col-lg-12">
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <div class="panel-heading col-lg-8">Barcode N. Jual</div>
+                                                <div class="panel-heading col-lg-8">Kode Nota</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="FB-150917-0001" disabled></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="panel-heading col-lg-8">Kode N. Beli</div>
-                                            </td>
-                                            <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="FJ-170917-0001" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="kodenota" readonly></div>
                                             </td>
                                         </tr>
 
@@ -98,7 +84,7 @@
                                                 <div class="panel-heading col-lg-8">Tanggal</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="15 September 2017" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="tanggal" readonly></div>
                                             </td>
                                         </tr>
 
@@ -107,7 +93,7 @@
                                                 <div class="panel-heading col-lg-8">Nama Customer</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="Sarah" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="namacust" readonly></div>
                                             </td>
                                         </tr>
 
@@ -116,7 +102,7 @@
                                                 <div class="panel-heading col-lg-8">Alamat Customer</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="Kebogadung" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="alamatcust" readonly></div>
                                             </td>
                                         </tr>
 
@@ -125,7 +111,7 @@
                                                 <div class="panel-heading col-lg-8">Kode Barang</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="GL- 001" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="kodebarang" readonly></div>
                                             </td>
                                         </tr>
 
@@ -134,7 +120,7 @@
                                                 <div class="panel-heading col-lg-8">Jenis</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="Gelang" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="jenis" readonly></div>
                                             </td>
                                         </tr>
 
@@ -143,7 +129,7 @@
                                                 <div class="panel-heading col-lg-8">Nama Jenis</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="Rantai Variasi" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="namajenis" readonly></div>
                                             </td>
                                         </tr>
 
@@ -152,25 +138,7 @@
                                                 <div class="panel-heading col-lg-8">Berat (gram)</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="1.050" disabled></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="panel-heading col-lg-8">Berat Skr (gram)</div>
-                                            </td>
-                                            <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="1" disabled></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="panel-heading col-lg-8">Kondisi</div>
-                                            </td>
-                                            <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="Bagus" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="beratgram" readonly></div>
                                             </td>
                                         </tr>
 
@@ -179,25 +147,25 @@
                                                 <div class="panel-heading col-lg-8">Harga</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="200000" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="hargagram" readonly></div>
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>
-                                                <div class="panel-heading col-lg-8">Ongkos</div>
+                                                <div class="panel-heading col-lg-8">Supplier</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="15000" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="supplier" readonly></div>
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>
-                                                <div class="panel-heading col-lg-8">Ongkos Lain-lain</div>
+                                                <div class="panel-heading col-lg-8">Kadar</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="0" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="kadar" readonly></div>
                                             </td>
                                         </tr>
 
@@ -206,7 +174,7 @@
                                                 <div class="panel-heading col-lg-8">Total Harga</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="185000" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="totalharga" readonly></div>
                                             </td>
                                         </tr>
 
@@ -215,14 +183,14 @@
                                                 <div class="panel-heading col-lg-8">Sales</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" name="stokLimit" value="Lia" disabled></div>
+                                                <div class="col-lg-4"><input type="text" id="namasales" readonly></div>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-primary">Aksi</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -236,3 +204,23 @@
         </div>
         <!-- /#wrapper -->
 @include('owner.layouts.footer')
+<script>
+  function notadetail(kodenota, tanggal, namacust, alamatcust, kodebarang, jenis, namajenis, berat, harga, suplier, kadar, totalharga, namasales) {
+    var element = document.getElementById("namabarang");
+    element.innerHTML = namajenis;
+
+    document.getElementById('kodenota').value = kodenota;
+    document.getElementById('tanggal').value = tanggal;
+    document.getElementById('namacust').value = namacust;
+    document.getElementById('alamatcust').value = alamatcust;
+    document.getElementById('kodebarang').value = kodebarang;
+    document.getElementById('jenis').value = jenis;
+    document.getElementById('namajenis').value = namajenis;
+    document.getElementById('beratgram').value = berat;
+    document.getElementById('hargagram').value = harga;
+    document.getElementById('supplier').value = suplier;
+    document.getElementById('kadar').value = kadar;
+    document.getElementById('totalharga').value = totalharga;
+    document.getElementById('namasales').value = namasales;
+  }
+</script>

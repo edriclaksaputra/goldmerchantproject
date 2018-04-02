@@ -95,18 +95,18 @@
                                 <li>
                                     <a href="laporanpenjualan"><i class="fa fa-bookmark"></i> Laporan Penjualan</a>
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <a href="laporanpembelian"><i class="fa fa-info-circle"></i> Laporan Pembelian</a>
                                 </li>
-                                 <li>
+                                <li>
                                     <a href="laporangadai"><i class="fa fa-info"></i> Laporan Gadai</a>
                                 </li>
-                                 <li>
+                                <li>
                                     <a href="laporankeuangan"><i class="fa fa-copy"></i> Laporan Keuangan</a>
                                 </li>
-                                 <li>
+                                <li>
                                     <a href="settupemployee"><i class="fa fa-file-text"></i> Setup Employee</a>
-                                </li> -->
+                                </li>
                             </li>
                         </ul>
                     </div>

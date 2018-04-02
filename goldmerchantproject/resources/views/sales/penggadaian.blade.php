@@ -35,7 +35,7 @@
                                                         Tanggal
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="tanggalgadai" id="todaydate" required autofocus>
+                                                        <input type="text" name="tanggalgadai" id="todaydate" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,10 +97,30 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="panel-heading col-sm-3">
+                                                        Berat
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <input type="text" name="berat" required autofocus>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
+                                                        Bunga Pinjaman
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <input type="text" name="bunga" required autofocus>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
                                                         Sales
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="namasales" value="{{$employeeDetail->name}}" required autofocus>
+                                                        <input type="text" name="namasales" value="{{$employeeDetail->name}}" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>

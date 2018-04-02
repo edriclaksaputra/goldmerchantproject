@@ -26,7 +26,7 @@
                                     Sandi Pegawai :
                                     </div>
                                     <div class="col-sm-4 text-left">
-                                        <input type="text" name="passcode" required autofocus size="35" >
+                                        <input type="password" type="password" name="passcode" required autofocus size="35" >
                                     </div>
                                     <div class="col-sm-2">
                                         <button type="Submit" class="btn btn-success">Login</button>

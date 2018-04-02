@@ -9,6 +9,9 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+| Author By : Edric Laksa Putra
+| Email : edricstephanus@gmail.com ,  stephanus_edric@yahoo.com
+| 2018
 */
 
 // Route::get('/', function () {
@@ -66,9 +69,11 @@ Route::post('/laporanbarang.baki.edit.proses', 'OwnerController@laporanbarangbak
 //baki
 Route::get('/laporanbarang.sepuh', 'OwnerController@laporanbarangsepuh')->name('laporanbarangsepuh');
 Route::get('/laporanbarang.rongsok', 'OwnerController@laporanbarangrongsok')->name('laporanbarangrongsok');
-
+//laporan penjualan pembelian
 Route::get('/laporanpenjualan', 'OwnerController@laporanpenjualan')->name('laporanpenjualan');
 Route::get('/laporanpembelian', 'OwnerController@laporanpembelian')->name('laporanpembelian');
 Route::get('/laporangadai', 'OwnerController@laporangadai')->name('laporangadai');
+Route::get('/laporantebus', 'OwnerController@laporantebus')->name('laporantebus');
 Route::get('/laporankeuangan', 'OwnerController@laporankeuangan')->name('laporankeuangan');
 Route::get('/settupemployee', 'OwnerController@setupemployee')->name('setupemployee');
+Route::post('/settupemployee.addnewemployee', 'OwnerController@addnewemployee')->name('addnewemployee');

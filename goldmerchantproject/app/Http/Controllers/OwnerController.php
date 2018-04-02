@@ -135,12 +135,28 @@ class OwnerController extends Controller
 
     public function laporanpembelian()
     {
-        return view ('owner.laporanpembelian');    
+        $listpembelian = Pembelian::where('statusvalidasi', 1)->get();
+        return view ('owner.laporanpembelian', compact('listpembelian'));  
     }
 
     public function laporangadai()
     {
-        return view ('owner.laporangadai');    
+        $listgadai = Gadaitebus::where('statusvalidasi', 1)->get();
+        $pinjamtotal = 0;
+        for ($i=0; $i < count($listgadai); $i++) {
+            $pinjamtotal = $pinjamtotal + $listgadai[$i]->totalpinjam;
+        }
+        return view ('owner.laporangadai', compact('listgadai', 'pinjamtotal'));    
+    }
+
+    public function laporantebus()
+    {
+        $listtebusan = Gadaitebus::where([ ['statusvalidasi', 1], ['status', 'lunas'] ])->get();
+        $tebustotal = 0;
+        for ($i=0; $i < count($listtebusan); $i++) {
+            $tebustotal = $tebustotal + $listtebusan[$i]->totalpinjam;
+        }
+        return view ('owner.laporantebus', compact('listtebusan', 'tebustotal'));    
     }
 
     public function laporankeuangan()
@@ -150,6 +166,18 @@ class OwnerController extends Controller
 
     public function setupemployee()
     {
-        return view ('owner.settup');    
+        $listemployee = Employee::get();
+        return view ('owner.settup', compact('listemployee'));    
+    }
+
+    public function addnewemployee()
+    {
+        $newemployee = new Employee;
+        $newemployee->name = Input::get('namakaryawan');
+        $newemployee->passcode = Input::get('passcode');
+        $newemployee->jabatan = Input::get('jabatan');
+        $newemployee->save();
+
+        return redirect ('settupemployee')->with('alert', 'Employee baru berhasil di add ! Silahkan melanjutkan pekerjaan anda');
     }
 }

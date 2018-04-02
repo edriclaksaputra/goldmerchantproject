@@ -184,14 +184,16 @@ class SalesController extends Controller
         $gadai->tanggaltebus = null;
         $gadai->namapenggadai = Input::get('nama');
         $gadai->namabarang = Input::get('jaminan');
+        $gadai->berat = Input::get('berat');
         $gadai->totalpinjam = Input::get('totalpinjam');
         $gadai->alamat = Input::get('alamat');
         $gadai->notelp = Input::get('notelp');
         $gadai->status = 'belumlunas';
         $gadai->salesgadai = Input::get('namasales');
         $gadai->salestebus = null;
-        $gadai->bunga = null;
-        $gadai->totalpengembalian = null;
+        $gadai->bunga = Input::get('bunga');
+        $totalpengembalian = (($gadai->bunga/100) * $gadai->totalpinjam) + $gadai->totalpinjam;
+        $gadai->totalpengembalian = $totalpengembalian;
         $gadai->statusvalidasi = 0;
         $gadai->save();
 
@@ -217,8 +219,13 @@ class SalesController extends Controller
             if($detailgadai->status == 'lunas'){
                 return redirect('tebus')->with('error', 'Status gadai telah selesai ! Mohon cek kembali')->with('employeeDetail', $detailEmployee);
             }
+            else if($detailgadai->statusvalidasi == 0){
+                return redirect('tebus')->with('error', 'Status gadai belum divalidasi ! Mohon cek kembali')->with('employeeDetail', $detailEmployee);
+            }
             else{
-                return view('sales.detailtebus', compact('detailgadai', 'detailEmployeeJson'));
+                $bunga = ($detailgadai->bunga/100) * $detailgadai->totalpinjam;
+                $totalbayar = $detailgadai->totalpinjam + $bunga;
+                return view('sales.detailtebus', compact('detailgadai', 'detailEmployeeJson', 'totalbayar'));
             }
         }
     }
@@ -230,8 +237,6 @@ class SalesController extends Controller
         $tanggaltebus = Input::get('tanggaltebus');
         $detailtebus->tanggaltebus = Carbon::parse($tanggaltebus);
         $detailtebus->salestebus = Input::get('salestebus');
-        $detailtebus->bunga = Input::get('bunga');
-        $detailtebus->totalpengembalian = Input::get('totalbayar');
         $detailtebus->status = 'lunas';
         $detailtebus->save();
 

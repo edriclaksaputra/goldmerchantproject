@@ -36,8 +36,8 @@
                                                 <td>{{$detailpenjualan->id}}</td>
                                                 <td>{{$detailpenjualan->barangs->jenis}}</td>
                                                 <td>{{$detailpenjualan->barangs->namajenis}}</td>
-                                                <td>{{$detailpenjualan->barangs->beratasli}}</td>
-                                                <td>{{$detailpenjualan->barangs->totalharga}}</td>
+                                                <td>{{number_foramt($detailpenjualan->barangs->beratasli, 0)}}</td>
+                                                <td>Rp {{ number_format($detailpenjualan->barangs->totalharga, 2)}}</td>
                                                 <td>{{$detailpenjualan->namasales}}</td>
                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="notadetail('{{$detailpenjualan->barangs->foto}}', '{{$detailpenjualan->id}}', '{{ Carbon\Carbon::parse($detailpenjualan->tanggal)->formatLocalized('%A %d %B %Y') }}', '{{$detailpenjualan->nama}}', '{{$detailpenjualan->alamat}}', '{{$detailpenjualan->barangs->id}}', '{{$detailpenjualan->barangs->jenis}}', '{{$detailpenjualan->barangs->namajenis}}', '{{$detailpenjualan->barangs->beratasli}}', '{{$detailpenjualan->barangs->hargagram}}', '{{$detailpenjualan->barangs->supplier}}', '{{$detailpenjualan->barangs->kadar}}', '{{$detailpenjualan->barangs->totalharga}}', '{{$detailpenjualan->namasales}}')">Detail Nota</button></td>
                                             </tr>

@@ -48,7 +48,7 @@
                                                         Tanggal Gadai
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="tanggalgadai" required autofocus readonly value={{$detailgadai->tanggalgadai}}>
+                                                        <input type="text" name="tanggalgadai" required autofocus readonly value="{{ Carbon\Carbon::parse($detailgadai->tanggalgadai)->formatLocalized('%A %d %B %Y') }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,7 +78,7 @@
                                                         Pinjam
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="totalpinjam" required autofocus readonly value={{$detailgadai->totalpinjam}}>
+                                                        <input type="text" name="totalpinjam" required autofocus readonly value="Rp {{number_format($detailgadai->totalpinjam, 2)}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,7 +88,7 @@
                                                         Jaminan
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="jaminan" required autofocus readonly value={{$detailgadai->namabarang}}>
+                                                        <input type="text" name="jaminan" required autofocus readonly value="{{$detailgadai->namabarang}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,7 +98,7 @@
                                                         Bunga
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="bunga" required autofocus>
+                                                        <input type="text" name="bunga" value="{{$detailgadai->bunga}} %" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +108,7 @@
                                                         Total Bayar
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <input type="text" name="totalbayar" required autofocus>
+                                                        <input type="text" name="totalbayar" value="Rp {{number_format($totalbayar, 2)}}" required autofocus readonly>
                                                     </div>
                                                 </div>
                                             </div>

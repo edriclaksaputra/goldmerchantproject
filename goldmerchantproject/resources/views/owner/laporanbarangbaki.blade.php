@@ -58,7 +58,7 @@
                                                     <tr class="odd gradeX">
                                                         <form method="post" action="/laporanbarang.baki.edit" enctype="multipart/form-data">
                                                             {{ csrf_field() }}
-                                                            <td>{{$detailbarang->tanggalmasuk}}</td>
+                                                            <td>{{ Carbon\Carbon::parse($detailbarang->tanggalmasuk)->formatLocalized('%A %d %B %Y') }}</td>
                                                             <td>{{$detailbarang->id}}</td>
                                                             <td>{{$detailbarang->jenis}}</td>
                                                             <td>{{$detailbarang->namajenis}}</td>
