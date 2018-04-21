@@ -82,7 +82,7 @@ class AdminController extends Controller
             $newBarang->foto = '/images/products/'.$namafoto;
             if (!$result) die("Could not save image!  Check file permissions.");
         }
-        $newBarang->save();
+        // $newBarang->save();
         $barangPrint = Barang::where('created_at', Carbon::now())->first();
         $this->print($barangPrint);
 
@@ -132,7 +132,5 @@ class AdminController extends Controller
         $binerlong = str_pad($biner, 8, '0', STR_PAD_LEFT);
         $d = new DNS1D();
         $d->getBarcodePNG($binerlong, "C39");
-
-        
     }
 }
