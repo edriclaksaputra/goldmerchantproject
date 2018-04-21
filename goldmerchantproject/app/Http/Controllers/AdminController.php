@@ -8,6 +8,7 @@ use Validator;
 use App\Barang;
 use Illuminate\Support\Facades\Input;
 use Carbon\Carbon;
+use \Milon\Barcode\DNS1D;
 
 class AdminController extends Controller
 {
@@ -19,11 +20,7 @@ class AdminController extends Controller
     public function databaki()
     {
         $databaki = null;
-        $int = 123;
-        $biner = decbin($int);
-        $binerlong = str_pad($biner, 8, '0', STR_PAD_LEFT);
-
-        return view('admin.databaki', compact('databaki', 'binerlong'));
+        return view('admin.databaki', compact('databaki'));
     }
 
     public function detaildatabaki()
@@ -86,8 +83,10 @@ class AdminController extends Controller
             if (!$result) die("Could not save image!  Check file permissions.");
         }
         $newBarang->save();
+        $barangPrint = Barang::where('created_at', Carbon::now())->first();
+        $this->print($barangPrint);
 
-        return redirect('laporanbarang.dalam')->with('alert', 'Barang telah berhasil di update ! Silahkan melanjutkan pekerjaan anda');
+        return redirect('inputbaru')->with('alert', 'Barang telah berhasil di update ! Silahkan melanjutkan pekerjaan anda');
     }
 
     public function inputbaki(){
@@ -125,4 +124,15 @@ class AdminController extends Controller
 
     //     return redirect('inputbaki')->with('alert', 'Barang telah dicancel masuk baki ! Silahkan melanjutkan pekerjaan anda');
     // }
+
+    public function print($barangprint){
+
+        $int = $barangprint->id;
+        $biner = decbin($int);
+        $binerlong = str_pad($biner, 8, '0', STR_PAD_LEFT);
+        $d = new DNS1D();
+        $d->getBarcodePNG($binerlong, "C39");
+
+        
+    }
 }
