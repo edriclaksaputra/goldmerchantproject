@@ -7,6 +7,7 @@ Developed management system for monitoring inventory, item stocking, buying and 
 - Single centred server.
 
 =========================
+# Run Application
 1. Git Clone
 2. cd tbanyar
 3. Composer install & Composer Update
