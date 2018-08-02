@@ -133,4 +133,9 @@ class AdminController extends Controller
         $d = new DNS1D();
         $d->getBarcodePNG($binerlong, "C39");
     }
+
+    public function exportbarangbaru(){
+        $barangbaru = Barang::where('statusprinted', 0)->get();
+        return view('admin.exportbarangbaru', compact('barangbaru'));
+    }
 }

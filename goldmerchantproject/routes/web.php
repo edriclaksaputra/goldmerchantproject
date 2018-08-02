@@ -30,6 +30,7 @@ Route::get('/inputbaki', 'AdminController@inputbaki')->name('inputbaki');
 Route::post('/inputbaki.insertbarangbaki', 'AdminController@insertbarangbaki')->name('insertbarangbaki');
 Route::get('/databaki', 'AdminController@databaki')->name('databaki');
 Route::post('/databaki.detail', 'AdminController@detaildatabaki')->name('detaildatabaki');
+Route::get('/exportbarangbaru', 'AdminController@exportbarangbaru')->name('exportbarangbaru');
 
 //Route Sales
 Route::get('/penjualan', 'SalesController@penjualan')->name('penjualan');

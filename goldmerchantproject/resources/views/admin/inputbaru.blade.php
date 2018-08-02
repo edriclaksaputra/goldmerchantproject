@@ -24,7 +24,7 @@
                                 <div class="col-lg-12">
                                     <form method="post" action="/inputbaru.insertbarangbaru" enctype="multipart/form-data">
                                         {{ csrf_field() }}
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-9">
                                             <br>
                                             <div class="panel panel-primary col-lg-12">
                                                 <br>
@@ -48,7 +48,7 @@
                                                 <img alt="barcode" src="../images/barcode.png" width="50%" height="50%"/>
                                             </div> -->
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <br>
                                             <!-- <div class="row">
                                                 <div class="col-lg-12">
@@ -273,6 +273,9 @@
                                 </div>
                             </div>
                             <!-- /.panel-body -->
+                            <div class="row">
+
+                            </div>
                         </div>
                         <!-- /.panel -->
                     </div>

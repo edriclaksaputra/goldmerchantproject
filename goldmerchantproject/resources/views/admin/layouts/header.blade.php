@@ -97,6 +97,9 @@
                             <li>
                                 <a href="databaki"><i class="fa fa-table fa-fw"></i> Data Baki</a>
                             </li>
+                            <li>
+                                <a href="exportbarangbaru"><i class="fa fa-calendar"></i> Eksport Barang Baru</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
