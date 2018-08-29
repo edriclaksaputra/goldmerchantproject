@@ -38,7 +38,9 @@
                                     </table>
                                 </div>
                                 <!-- /.table-responsive -->
-                                <button></button>
+                                <form action="/exportbarangbaru.downloadexcel" method="get"  enctype="multipart/form-data">
+                                    <button type="submit" class="btn btn-success col-lg-2">Download File Excel</button>
+                                </form>
                             </div>
                         </div>
                         <!-- /.panel -->

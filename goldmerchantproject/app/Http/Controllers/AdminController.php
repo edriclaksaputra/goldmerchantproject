@@ -9,6 +9,10 @@ use App\Barang;
 use Illuminate\Support\Facades\Input;
 use Carbon\Carbon;
 use \Milon\Barcode\DNS1D;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\Listbarangprint;
+use App\Listprintbarang;
+use DB;
 
 class AdminController extends Controller
 {
@@ -137,5 +141,27 @@ class AdminController extends Controller
     public function exportbarangbaru(){
         $barangbaru = Barang::where('statusprinted', 0)->get();
         return view('admin.exportbarangbaru', compact('barangbaru'));
+    }
+
+    public function downloadexcel(){
+        DB::table('Listprintbarangs')->where('id', '!=', 'id')->delete();
+
+        $barangprint = Barang::where('statusprinted', 0)->get();
+        for ($i=0; $i < count($barangprint); $i++) { 
+            $listbarangprint = new Listprintbarang;
+            $listbarangprint->id = $barangprint[$i]->id;
+            $listbarangprint->jenis = $barangprint[$i]->jenis;
+            $listbarangprint->namajenis = $barangprint[$i]->namajenis;
+            $listbarangprint->ukuran = $barangprint[$i]->ukuran;
+            $listbarangprint->beratasli = $barangprint[$i]->beratasli;
+            $listbarangprint->beratpembulatan = $barangprint[$i]->beratpembulatan;
+            $listbarangprint->hargagram = $barangprint[$i]->hargagram;
+            $listbarangprint->totalharga = $barangprint[$i]->totalharga;
+            $listbarangprint->supplier = $barangprint[$i]->supplier;
+            $listbarangprint->kadar = $barangprint[$i]->kadar;
+
+            $listbarangprint->save();
+        }
+        return Excel::download(new Listbarangprint, 'listbarangprint.xlsx');
     }
 }

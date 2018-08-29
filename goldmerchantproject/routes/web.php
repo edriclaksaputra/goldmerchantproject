@@ -31,6 +31,7 @@ Route::post('/inputbaki.insertbarangbaki', 'AdminController@insertbarangbaki')->
 Route::get('/databaki', 'AdminController@databaki')->name('databaki');
 Route::post('/databaki.detail', 'AdminController@detaildatabaki')->name('detaildatabaki');
 Route::get('/exportbarangbaru', 'AdminController@exportbarangbaru')->name('exportbarangbaru');
+Route::get('/exportbarangbaru.downloadexcel', 'AdminController@downloadexcel')->name('downloadexcel');
 
 //Route Sales
 Route::get('/penjualan', 'SalesController@penjualan')->name('penjualan');
