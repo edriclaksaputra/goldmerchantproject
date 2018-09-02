@@ -243,4 +243,10 @@ class SalesController extends Controller
         return redirect('/')->with('alert', 'Detail tebus berhasil di checkout ! Silahkan melanjutkan transaksi');
     }
     //penggadaian dan tebus
+
+    //Cetak nota & Bon
+    public function cetaknotabon()
+    {
+        return view('sales.cetaknotabon');
+    }
 }

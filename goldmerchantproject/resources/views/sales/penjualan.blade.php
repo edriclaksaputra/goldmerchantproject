@@ -36,7 +36,7 @@
                                         Barcode Barang :
                                         </div>
                                         <div class="col-sm-4 text-left">
-                                            <input type="text" name="barcode" required autofocus size="35" >
+                                            <input type="password" name="barcode" required autofocus size="35" >
                                         </div>
                                         <input type="hidden" name="detailEmployee" value="{{session('employeeDetail')}}">
                                         <div class="col-sm-2">
@@ -67,7 +67,7 @@
                                                 Gambar Terlampir
                                             </div>
                                             <div class="panel-body text-center">
-                                                <img alt="gambar barang" src="{{$databarang->foto}}" width="50%" height="50%" />
+                                                <img alt="gambar barang" src="{{$databarang->foto}}" width="100%" height="100%" />
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +149,8 @@
                                                     Harga
                                                 </div>
                                                 <div class="col-sm-1">
-                                                    <input type="text" id="hargagram" name="hargagram" value="{{$databarang->hargagram}}" required autofocus readonly>
+                                                    <input type="text" name="hargagram" value="Rp {{number_format($databarang->hargagram,2,'.',',')}}" required autofocus readonly>
+                                                    <input type="hidden" id="hargagram" value="{{$databarang->hargagram}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -207,7 +208,7 @@
                                         <div class="row">
                                             <div class="col-lg-12 text-right">
                                                 <div class="panel-heading col-lg-2">
-                                                    <button type="Submit" class="btn btn-success">Submit and Print</button>
+                                                    <button type="Submit" class="btn btn-success">Submit and Print Nota</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -228,7 +229,8 @@
 <script>
     var berat = document.getElementById("beratasli").value;
     var harga = document.getElementById("hargagram").value;
-    document.getElementById("totalharga").value = (berat*harga);
+    var num = berat*harga.toString();
+    document.getElementById("totalharga").value = 'Rp '+(num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); 
 
 </script>
 <script>

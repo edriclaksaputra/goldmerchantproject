@@ -67,6 +67,7 @@ class AdminController extends Controller
         $newBarang->totalharga = $harga * $gram;
         $newBarang->supplier = Input::get('namasupplier');
         $newBarang->stok = Input::get('baki');
+        $newBarang->statusprinted = 0;
         $kondisi = Input::get('kondisi');
         $newBarang->status = "";
         for ($i=0; $i < count($kondisi); $i++) {
@@ -86,7 +87,7 @@ class AdminController extends Controller
             $newBarang->foto = '/images/products/'.$namafoto;
             if (!$result) die("Could not save image!  Check file permissions.");
         }
-        // $newBarang->save();
+        $newBarang->save();
         $barangPrint = Barang::where('created_at', Carbon::now())->first();
         $this->print($barangPrint);
 
@@ -162,6 +163,16 @@ class AdminController extends Controller
 
             $listbarangprint->save();
         }
-        return Excel::download(new Listbarangprint, 'listbarangprint.xlsx');
+        if(count($barangprint) > 0){
+            for ($i=0; $i < count($barangprint); $i++) { 
+                $barangprint[$i]->statusprinted = 1;
+                $barangprint[$i]->save();
+            }
+            return Excel::download(new Listbarangprint, 'listbarangprint.xlsx');
+        }
+        else{
+            return redirect('exportbarangbaru')->with('error', 'List barang kosong ! Silahkan cek kembali');
+        }
+        
     }
 }

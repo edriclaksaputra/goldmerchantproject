@@ -37,6 +37,7 @@ Route::get('/exportbarangbaru.downloadexcel', 'AdminController@downloadexcel')->
 Route::get('/penjualan', 'SalesController@penjualan')->name('penjualan');
 Route::post('/detailbarangpenjualan', 'SalesController@detailbarangpenjualan')->name('detailbarangpenjualan');
 Route::post('/inputpenjualan', 'SalesController@inputpenjualan')->name('inputpenjualan');
+Route::get('/cetaknotabon', 'SalesController@cetaknotabon')->name('cetaknotabon');
 
 Route::get('/pembelian', 'SalesController@pembelian')->name('pembelian');
 Route::post('/pembeliandalam', 'SalesController@pembeliandalam')->name('pembeliandalam');
