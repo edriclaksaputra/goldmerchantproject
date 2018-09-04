@@ -12,6 +12,7 @@ use App\Penjualan;
 use App\Pembelian;
 use App\Gadaitebus;
 use App\Employee;
+use App\Kondisibarang;
 
 class SalesController extends Controller
 {
@@ -122,7 +123,8 @@ class SalesController extends Controller
         if($idPenjualan != 0){
             $detailPenjualan = Penjualan::where('id', $idPenjualan)->get()->first();
             if($detailPenjualan != null){
-                return view('sales.detailpembelianbarang', compact('detailPenjualan', 'detailEmployeeJson'));
+                $kondisi = Kondisibarang::all();
+                return view('sales.detailpembelianbarang', compact('detailPenjualan', 'detailEmployeeJson', 'kondisi'));
             }
             else{
                 return redirect('pembelian')->with('error', 'Rekap data penjualan tidak ditemukan ! Mohon cek kembali')->with('employeeDetail', $detailEmployee);
@@ -153,7 +155,7 @@ class SalesController extends Controller
         $hargagram = Input::get('hargabeli');
         $pembelian->totalharga = ($gram * $hargagram)-($ongkos+$ongkoslain);
         $pembelian->kadar = Input::get('kadar');
-        $pembelian->kondisi = Input::get('kondisi');
+        $pembelian->kondisibarangs_id = Input::get('kondisi');
         $dateformat = Input::get('tanggalbeli');
         $pembelian->tanggalmasuk = Carbon::parse($dateformat);
         $pembelian->tanggalkeluar = null;

@@ -214,9 +214,9 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <select class="form-control" name="kondisi">
-                                                            <option selected>Siap Jual</option>
-                                                            <option>Sepuh</option>
-                                                            <option>Lebur</option>
+                                                            @foreach($kondisi as $kondisidetail)
+                                                            <option value={{$kondisidetail->id}}>{{$kondisidetail->kondisi}}</option>
+                                                            @endforeach
                                                         </select>
                                                     </div>
                                                 </div>
