@@ -20,6 +20,16 @@ class KasirController extends Controller
         return view('kasir.validasi', compact('listPenjualan', 'listPembelian', 'listGadai'));
     }
 
+    public function printnota($jenis, $idtransaksi){
+        if($jenis == 'penjualan'){
+            $transaksi = Penjualan::find($idtransaksi);
+            return view('kasir.printnota', compact('transaksi'));
+        }
+    }
+    public function printnotapenjualan(){
+        
+    }
+
     public function validasi()
     {
     	$idtransaksi = Input::get('idtransaksi');
@@ -37,14 +47,16 @@ class KasirController extends Controller
     		else if($jenis == 'penjualan'){
     			$transaksi = Penjualan::find($idtransaksi);
     			$transaksi->statusvalidasi = 1;
-    			$transaksi->save();
+    			// $transaksi->save();
     			
     			//status barang diubah
     			$barang = Barang::find($transaksi->barangs_id);
     			$barang->stok = 'Terjual';
-    			$barang->save();
+    			// $barang->save();
 
-    			return redirect('/validasitransaksi')->with('alert', 'Transaksi penjualan telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');
+                return $this->printnota($jenis, $idtransaksi);
+
+    			// return redirect('/validasitransaksi')->with('alert', 'Transaksi penjualan telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');
     		}
     		else{
     			$transaksi = Gadaitebus::find($idtransaksi);

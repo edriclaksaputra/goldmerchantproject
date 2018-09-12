@@ -22,6 +22,8 @@
                 });
             });
         </script>
-
+        
+        <!-- Print Page -->
+        <script type="text/javascript" src="js/jquery.printPage.js"></script>
     </body>
 </html>

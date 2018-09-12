@@ -56,6 +56,7 @@ Route::post('/usercheck.validation', 'SalesController@usercheckvalidation')->nam
 //Route Kasir
 Route::get('/validasitransaksi', 'KasirController@index')->name('validasitransaksi');
 Route::post('/validasitransaksi.validasi', 'KasirController@validasi')->name('validasi');
+Route::get('/validasitransaksi.printnota', 'KasirController@printnota')->name('printnota');
 
 //Route Owner
 Route::get('/ownerdashboard', 'OwnerController@welcome')->name('ownerdashboard');
