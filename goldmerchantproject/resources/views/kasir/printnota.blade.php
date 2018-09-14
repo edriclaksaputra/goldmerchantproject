@@ -87,7 +87,8 @@
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
-                <button type="button" class="btn btn-success" onclick="printDiv('page-print')">Print Nota</button>
+                <button type="button" class="btn btn-success col-lg-1" onclick="printDiv('page-print')">Print Nota</button>&nbsp&nbsp
+                <a href="/validasitransaksi.printbackfunc"><button type="button" class="btn btn-warning">Kembali</button></a>
             </div>
             <!-- /#page-wrapper -->
         </div>

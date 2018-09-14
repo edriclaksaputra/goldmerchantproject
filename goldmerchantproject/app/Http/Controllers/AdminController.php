@@ -175,4 +175,20 @@ class AdminController extends Controller
         }
         
     }
+
+    public function admincekbarang(){
+        $databarang = null;
+        return view('admin.cekbarang', compact('databarang'));
+    }
+
+    public function admindetailbarang(){
+        $barcode = Input::get('barcode');
+        $databarang = Barang::where([['id', $barcode],['stok', '!=', 'Terjual']])->get()->first();
+        if($databarang == null){
+            return redirect('admincekbarang')->with('error', 'Barang tidak ditemukan ! Tolong cek ketersediaan barang')->with('databarang', $databarang);
+        }
+        else{
+            return view('admin.cekbarang', compact('databarang'));
+        }
+    }
 }

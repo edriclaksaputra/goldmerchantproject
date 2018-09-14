@@ -100,7 +100,10 @@
                                     <a><i class="fa fa-credit-card"></i> <button type="submit" onclick="setPage('gadai')" style="background: none; border:none"> Gadai</button></a>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-history"></i> <button type="submit" onclick="setPage('tebus')" style="background: none; border:none"> Tebus Gadai</button></a>
+                                    <a><i class="fa fa-history"></i> <button type="submit" onclick="setPage('tebus')" style="background: none; border:none;"> Tebus Gadai</button></a>
+                                </li>
+                                <li style="background-color: #eee">
+                                    <a href="salescekbarang"><i class="fa fa-search"></i> Cek Detail Barang</a>
                                 </li>
                             </ul>
                             <input type="hidden" name="page" id="idpage">

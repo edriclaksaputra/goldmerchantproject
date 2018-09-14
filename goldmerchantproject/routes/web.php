@@ -32,6 +32,8 @@ Route::get('/databaki', 'AdminController@databaki')->name('databaki');
 Route::post('/databaki.detail', 'AdminController@detaildatabaki')->name('detaildatabaki');
 Route::get('/exportbarangbaru', 'AdminController@exportbarangbaru')->name('exportbarangbaru');
 Route::get('/exportbarangbaru.downloadexcel', 'AdminController@downloadexcel')->name('downloadexcel');
+Route::get('/admincekbarang', 'AdminController@admincekbarang')->name('admincekbarang');
+Route::post('/admindetailbarang', 'AdminController@admindetailbarang')->name('admindetailbarang');
 
 //Route Sales
 Route::get('/penjualan', 'SalesController@penjualan')->name('penjualan');
@@ -53,10 +55,14 @@ Route::post('/usercheck', 'SalesController@usercheck')->name('usercheck');
 Route::get('/usercheck', 'SalesController@usercheck')->name('usercheck');
 Route::post('/usercheck.validation', 'SalesController@usercheckvalidation')->name('usercheckvalidation');
 
+Route::get('/salescekbarang', 'SalesController@salescekbarang')->name('salescekbarang');
+Route::post('/salesdetailbarang', 'SalesController@salesdetailbarang')->name('salesdetailbarang');
+
 //Route Kasir
 Route::get('/validasitransaksi', 'KasirController@index')->name('validasitransaksi');
 Route::post('/validasitransaksi.validasi', 'KasirController@validasi')->name('validasi');
 Route::get('/validasitransaksi.printnota', 'KasirController@printnota')->name('printnota');
+Route::get('/validasitransaksi.printbackfunc', 'KasirController@printbackfunc')->name('printbackfunc');
 
 //Route Owner
 Route::get('/ownerdashboard', 'OwnerController@welcome')->name('ownerdashboard');

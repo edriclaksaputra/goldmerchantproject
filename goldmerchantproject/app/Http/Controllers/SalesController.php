@@ -251,4 +251,21 @@ class SalesController extends Controller
     {
         return view('sales.cetaknotabon');
     }
+
+    //Cek Barang
+    public function salescekbarang(){
+        $databarang = null;
+        return view('sales.cekbarang', compact('databarang'));
+    }
+
+    public function salesdetailbarang(){
+        $barcode = Input::get('barcode');
+        $databarang = Barang::where([['id', $barcode],['stok', '!=', 'Terjual']])->get()->first();
+        if($databarang == null){
+            return redirect('salescekbarang')->with('error', 'Barang tidak ditemukan ! Tolong cek ketersediaan barang')->with('databarang', $databarang);
+        }
+        else{
+            return view('sales.cekbarang', compact('databarang'));
+        }
+    }
 }

@@ -26,8 +26,8 @@ class KasirController extends Controller
             return view('kasir.printnota', compact('transaksi'));
         }
     }
-    public function printnotapenjualan(){
-        
+    public function printbackfunc(){
+        return redirect('/validasitransaksi')->with('alert', 'Transaksi penjualan telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');
     }
 
     public function validasi()
@@ -47,16 +47,14 @@ class KasirController extends Controller
     		else if($jenis == 'penjualan'){
     			$transaksi = Penjualan::find($idtransaksi);
     			$transaksi->statusvalidasi = 1;
-    			// $transaksi->save();
+    			$transaksi->save();
     			
     			//status barang diubah
     			$barang = Barang::find($transaksi->barangs_id);
     			$barang->stok = 'Terjual';
-    			// $barang->save();
+    			$barang->save();
 
                 return $this->printnota($jenis, $idtransaksi);
-
-    			// return redirect('/validasitransaksi')->with('alert', 'Transaksi penjualan telah berhasil di validasi ! Silahkan lanjutkan transaksi lain');
     		}
     		else{
     			$transaksi = Gadaitebus::find($idtransaksi);

@@ -100,6 +100,9 @@
                             <li>
                                 <a href="exportbarangbaru"><i class="fa fa-calendar"></i> Eksport Barang Baru</a>
                             </li>
+                            <li>
+                                <a href="admincekbarang"><i class="fa fa-search"></i> Cek Detail Barang</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
