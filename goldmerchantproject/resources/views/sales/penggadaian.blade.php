@@ -15,7 +15,7 @@
                 </div>
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 Input Detail Gadai

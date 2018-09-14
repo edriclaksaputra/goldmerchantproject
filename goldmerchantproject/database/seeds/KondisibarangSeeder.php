@@ -24,7 +24,7 @@ class KondisibarangSeeder extends Seeder
         	'kondisi'=>'Pekok',
         ]);
         DB::table('kondisibarangs')->insert([
-        	'kondisi'=>'Rusak',
+        	'kondisi'=>'Rongsok',
         ]);
     }
 }

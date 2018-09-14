@@ -36,10 +36,10 @@
                                                 <td>{{$detailpenjualan->id}}</td>
                                                 <td>{{$detailpenjualan->barangs->jenis}}</td>
                                                 <td>{{$detailpenjualan->barangs->namajenis}}</td>
-                                                <td>{{number_foramt($detailpenjualan->barangs->beratasli, 0)}}</td>
+                                                <td>{{number_format($detailpenjualan->barangs->beratasli, 0)}}</td>
                                                 <td>Rp {{ number_format($detailpenjualan->barangs->totalharga, 2)}}</td>
                                                 <td>{{$detailpenjualan->namasales}}</td>
-                                                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="notadetail('{{$detailpenjualan->barangs->foto}}', '{{$detailpenjualan->id}}', '{{ Carbon\Carbon::parse($detailpenjualan->tanggal)->formatLocalized('%A %d %B %Y') }}', '{{$detailpenjualan->nama}}', '{{$detailpenjualan->alamat}}', '{{$detailpenjualan->barangs->id}}', '{{$detailpenjualan->barangs->jenis}}', '{{$detailpenjualan->barangs->namajenis}}', '{{$detailpenjualan->barangs->beratasli}}', '{{$detailpenjualan->barangs->hargagram}}', '{{$detailpenjualan->barangs->supplier}}', '{{$detailpenjualan->barangs->kadar}}', '{{$detailpenjualan->barangs->totalharga}}', '{{$detailpenjualan->namasales}}')">Detail Nota</button></td>
+                                                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="notadetail('{{$detailpenjualan->barangs->foto}}', '{{$detailpenjualan->id}}', '{{ Carbon\Carbon::parse($detailpenjualan->tanggal)->formatLocalized('%A %d %B %Y') }}', '{{$detailpenjualan->nama}}', '{{$detailpenjualan->alamat}}', '{{$detailpenjualan->barangs->id}}', '{{$detailpenjualan->barangs->jenis}}', '{{$detailpenjualan->barangs->namajenis}}', '{{$detailpenjualan->barangs->beratasli}}', 'Rp {{number_format($detailpenjualan->barangs->hargagram,2)}}', '{{$detailpenjualan->barangs->supplier}}', '{{$detailpenjualan->barangs->kadar}}', 'Rp {{number_format($detailpenjualan->barangs->totalharga,2)}}', '{{$detailpenjualan->namasales}}')">Detail Nota</button></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -90,7 +90,7 @@
                                                 <div class="panel-heading col-lg-8">Tanggal</div>
                                             </td>
                                             <td>
-                                                <div class="col-lg-4"><input type="text" id="tanggal" readonly></div>
+                                                <div class="col-lg-4"><input type="text" id="tanggal" readonly size="30"></div>
                                             </td>
                                         </tr>
 

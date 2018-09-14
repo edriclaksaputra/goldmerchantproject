@@ -34,21 +34,23 @@
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>Tanggal Masuk</th>
-                                                    <th>Kode Barang</th>
-                                                    <th>Jenis</th>
-                                                    <th>Nama Jenis</th>
+                                                    <th class="col-lg-2">Tanggal Masuk</th>
+                                                    <th class="col-lg-2">Jenis</th>
+                                                    <th class="col-lg-2">Nama Jenis</th>
+                                                    <th class="col-lg-2">Ukuran</th>
                                                     <th>Berat (gram)</th>
+                                                    <th>Kadar</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach($barangsepuh as $detailbarangsepuh)
                                                 <tr class="odd gradeX">
                                                     <td>{{ Carbon\Carbon::parse($detailbarangsepuh->tanggalmasuk)->formatLocalized('%A %d %B %Y') }}</td>
-                                                    <td>{{$detailbarangsepuh->id}}</td>
                                                     <td>{{$detailbarangsepuh->jenis}}</td>
                                                     <td>{{$detailbarangsepuh->namajenis}}</td>
+                                                    <td>{{$detailbarangsepuh->ukuran}}</td>
                                                     <td>{{$detailbarangsepuh->beratasli}}</td>
+                                                    <td>{{$detailbarangsepuh->kadar}}</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
@@ -61,7 +63,7 @@
                                                 Berat Total (gram)
                                             </div>
                                             <div class="col-lg-2">
-                                                <input type="text" name="stokLimit" value={{$berattotal}}>
+                                                <input style="text-align: center" type="text" name="stokLimit" value="{{$berattotal}}" required autofocus readonly>
                                             </div>
                                         </div>
                                     </div>

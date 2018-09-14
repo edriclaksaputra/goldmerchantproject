@@ -44,10 +44,10 @@
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>Tanggal Masuk</th>
-                                                    <th class="col-lg-1">Kode Barang</th>
-                                                    <th>Jenis</th>
-                                                    <th>Nama</th>
+                                                    <th class="col-lg-2">Tanggal Masuk</th>
+                                                    <th class="col-lg-2">Kode Barang</th>
+                                                    <th class="col-lg-2">Jenis</th>
+                                                    <th class="col-lg-2">Nama Jenis</th>
                                                     <th>Berat (gram)</th>
                                                     <th>Action</th>
                                                 </tr>

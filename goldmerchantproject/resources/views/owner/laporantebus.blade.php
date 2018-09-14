@@ -16,7 +16,7 @@
                         </li>
                     </ul>
                     <!-- Tab panes -->
-                    <div class="tab-content col-lg-11">
+                    <div class="tab-content col-lg-12">
                         <div class="tab-pane fade in active" id="tebus">
                             <h4>Laporan Tebus</h4>
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -31,6 +31,8 @@
                                         <th>Jaminan</th>
                                         <th>Berat (gram)</th>
                                         <th>Bunga</th>
+                                        <th>Pengembalian</th>
+                                        <th>Revenue</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,19 +47,30 @@
                                         <td>{{$detaillisttebusan->namabarang}}</td>
                                         <td>{{$detaillisttebusan->berat}}</td>
                                         <td>{{$detaillisttebusan->bunga}} %</td>
+                                        <td>Rp {{ number_format($detaillisttebusan->totalpengembalian, 2)}}</td>
+                                        <td>Rp {{ number_format($detaillisttebusan->keuntungan, 2)}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                             <div class="col-lg-12">
-                                <div class="col-lg-7">
-                                    
+                                <div class="col-lg-3">
                                 </div>
                                 <div class="panel-heading col-lg-2 text-right">
-                                    Total Tebusan
+                                    Total Pengembalian Tebusan
                                 </div>
                                 <div class="col-lg-2">
-                                    <input type="text" name="tebustotal" value="Rp {{number_format($tebustotal, 2)}}">
+                                    <input type="text" name="tebustotal" value="Rp {{number_format($tebustotal, 2)}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3">
+                                </div>
+                                <div class="panel-heading col-lg-2 text-right">
+                                    Total Revenue
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" name="untungtotal" value="Rp {{number_format($untungtotal, 2)}}" readonly>
                                 </div>
                             </div>
                             <div class="row col-lg-12">

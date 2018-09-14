@@ -28,27 +28,44 @@
                                 </ul>
 
                                 <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div class="tab-pane fade" id="barangrongsok">
-                                        <h4>Barang Rongsok</h4>
+                                <div class="tab-content col-lg-10">
+                                    <div class="tab-pane fade in active">
+                                        <h4>Barang Sepuh</h4>
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>Tanggal Masuk</th>
-                                                    <th>Kode Barang</th>
-                                                    <th>Jenis</th>
+                                                    <th class="col-lg-2">Tanggal Masuk</th>
+                                                    <th class="col-lg-2">Jenis</th>
+                                                    <th class="col-lg-2">Nama Jenis</th>
+                                                    <th class="col-lg-2">Ukuran</th>
                                                     <th>Berat (gram)</th>
+                                                    <th>Kadar</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($barangrongsok as $detailbarangrongsok)
                                                 <tr class="odd gradeX">
-                                                    <td>15-Sep-2017</td>
-                                                    <td>GL-001</td>
-                                                    <td>Gelang</td>
-                                                    <td>1.050</td>
+                                                    <td>{{ Carbon\Carbon::parse($detailbarangrongsok->tanggalmasuk)->formatLocalized('%A %d %B %Y') }}</td>
+                                                    <td>{{$detailbarangrongsok->jenis}}</td>
+                                                    <td>{{$detailbarangrongsok->namajenis}}</td>
+                                                    <td>{{$detailbarangrongsok->ukuran}}</td>
+                                                    <td>{{$detailbarangrongsok->beratasli}}</td>
+                                                    <td>{{$detailbarangrongsok->kadar}}</td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-7">
+                                                
+                                            </div>
+                                            <div class="panel-heading col-lg-2 text-right">
+                                                Berat Total (gram)
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <input style="text-align: center" type="text" name="stokLimit" value="{{$berattotal}}" required autofocus readonly>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -99,7 +99,7 @@
                                     <a href="laporanpembelian"><i class="fa fa-info-circle"></i> Laporan Pembelian</a>
                                 </li>
                                 <li>
-                                    <a href="laporangadai"><i class="fa fa-info"></i> Laporan Gadai</a>
+                                    <a href="laporangadai"><i class="fa fa-info"></i> Laporan Gadai & Tebus</a>
                                 </li>
                                 <li>
                                     <a href="laporankeuangan"><i class="fa fa-copy"></i> Laporan Keuangan</a>

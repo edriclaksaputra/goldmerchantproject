@@ -71,7 +71,7 @@ class OwnerController extends Controller
     //baki
     public function laporanbarangbaki()
     {
-        $barangbaki = Barang::where('stok', '!=', 'Dalam')->get();
+        $barangbaki = Barang::where([['stok', '!=', 'Dalam'],['stok', '!=', 'Terjual']])->get();
         return view ('owner.laporanbarangbaki', compact('barangbaki'));
     }
 
@@ -113,7 +113,7 @@ class OwnerController extends Controller
     //baki
     public function laporanbarangsepuh()
     {
-        $barangsepuh = Pembelian::where('kondisi', 'Sepuh')->get();
+        $barangsepuh = Pembelian::where('kondisibarangs_id', 2)->get();
         $berattotal = 0;
         for ($i=0; $i < count($barangsepuh); $i++) {
             $berattotal = $berattotal + $barangsepuh[$i]->beratasli;
@@ -123,7 +123,12 @@ class OwnerController extends Controller
 
     public function laporanbarangrongsok()
     {
-        return view ('owner.laporanbarangrongsok');
+        $barangrongsok = Pembelian::where('kondisibarangs_id', 5)->get();
+        $berattotal = 0;
+        for ($i=0; $i < count($barangrongsok); $i++) {
+            $berattotal = $berattotal + $barangrongsok[$i]->beratasli;
+        }
+        return view ('owner.laporanbarangrongsok', compact('barangrongsok', 'berattotal'));
     }
 
     //Laporan Barang
@@ -153,10 +158,13 @@ class OwnerController extends Controller
     {
         $listtebusan = Gadaitebus::where([ ['statusvalidasi', 1], ['status', 'lunas'] ])->get();
         $tebustotal = 0;
+        $untungtotal = 0;
         for ($i=0; $i < count($listtebusan); $i++) {
-            $tebustotal = $tebustotal + $listtebusan[$i]->totalpinjam;
+            $tebustotal = $tebustotal + $listtebusan[$i]->totalpengembalian;
+            $untungtotal = $untungtotal + ($listtebusan[$i]->totalpengembalian - $listtebusan[$i]->totalpinjam);
+            $listtebusan[$i]->keuntungan = $listtebusan[$i]->totalpengembalian - $listtebusan[$i]->totalpinjam;
         }
-        return view ('owner.laporantebus', compact('listtebusan', 'tebustotal'));    
+        return view ('owner.laporantebus', compact('listtebusan', 'tebustotal', 'untungtotal'));    
     }
 
     public function laporankeuangan()

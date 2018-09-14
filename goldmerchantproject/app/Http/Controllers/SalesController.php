@@ -132,7 +132,8 @@ class SalesController extends Controller
         }
         else if($idPenjualan == 0){
             $detailPenjualan = null;
-            return view('sales.detailpembelianbarang', compact('detailPenjualan', 'detailEmployeeJson'));
+            $kondisi = Kondisibarang::all();
+            return view('sales.detailpembelianbarang', compact('detailPenjualan', 'detailEmployeeJson', 'kondisi'));
         }
     }
 

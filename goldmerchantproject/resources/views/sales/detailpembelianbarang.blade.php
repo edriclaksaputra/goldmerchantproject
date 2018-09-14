@@ -125,7 +125,7 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         @if($detailPenjualan != null)
-                                                        <input type="text" name="namajenis" required readonly autofocus value={{$detailPenjualan->barangs->namajenis}}>
+                                                        <input type="text" name="namajenis" required readonly autofocus value="{{$detailPenjualan->barangs->namajenis}}">
                                                         @else
                                                         <input type="text" name="namajenis" required autofocus>
                                                         @endif
@@ -166,6 +166,18 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <input type="text" name="beratasli" required readonly autofocus value={{$detailPenjualan->barangs->kadar}}>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @if($detailPenjualan != null)
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="panel-heading col-sm-3">
+                                                        Harga Gram Sebelumnya
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input type="text" name="hargagram" required readonly autofocus value="Rp {{number_format($detailPenjualan->barangs->hargagram,2,'.',',')}}">
                                                     </div>
                                                 </div>
                                             </div>
