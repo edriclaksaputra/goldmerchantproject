@@ -144,10 +144,20 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="panel-heading col-lg-2">
+                                                    Stok
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <input type="text" name="stok" value="{{$databarang->stok}}" required autofocus readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="panel-heading col-lg-2">
                                                     Total Harga
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <input type="text" name="totalharga" id="totalharga" required autofocus>
+                                                    <input type="text" name="totalharga" id="totalharga" required autofocus readonly>
                                                 </div>
                                             </div>
                                         </div>
