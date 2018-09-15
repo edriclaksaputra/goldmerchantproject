@@ -75,7 +75,7 @@ class SalesController extends Controller
         $barcode = Input::get('barcode');
         $databarang = Barang::where([['id', $barcode],['stok', '!=', 'Terjual']])->get()->first();
         if($databarang == null){
-        	return redirect('penjualan')->with('error', 'Barang tidak ditemukan ! Tolong cek ketersediaan barang')->with('databarang', $databarang);
+        	return redirect('penjualan')->with('error', 'Barang tidak ditemukan ! Tolong cek ketersediaan barang')->with('databarang', $databarang)->with('employeeDetail', $detailEmployee);
         }
         else{
         	return view('sales.penjualan', compact('databarang', 'detailEmployeeJson'))->with('employeeDetail', $detailEmployeeJson);
