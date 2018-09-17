@@ -24,7 +24,7 @@
                                 <div class="col-lg-12">
                                     <form method="post" action="/inputbaru.insertbarangbaru" enctype="multipart/form-data">
                                         {{ csrf_field() }}
-                                        <div class="col-lg-9">
+                                        <div class="col-lg-4">
                                             <br>
                                             <div class="panel panel-primary col-lg-12">
                                                 <br>
@@ -48,7 +48,7 @@
                                                 <img alt="barcode" src="../images/barcode.png" width="50%" height="50%"/>
                                             </div> -->
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-7">
                                             <br>
                                             <!-- <div class="row">
                                                 <div class="col-lg-12">
@@ -62,7 +62,7 @@
                                             </div> -->
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-sm-2 {{ $errors->has('jenisbarang') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-sm-3 {{ $errors->has('jenisbarang') ? ' has-error' : '' }}">
                                                         Jenis
                                                     </div>
                                                     <div class="col-sm-3">
@@ -74,7 +74,7 @@
                                                             <option>Gigi Palsu</option>
                                                         </select>
                                                     </div>
-                                                    <div class="panel-heading col-sm-1 {{ $errors->has('ukuranbarang') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-sm-2 {{ $errors->has('ukuranbarang') ? ' has-error' : '' }}">
                                                         Ukuran
                                                     </div>
                                                     <div class="col-sm-2">
@@ -89,7 +89,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-sm-2 {{ $errors->has('namabarang') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-sm-3 {{ $errors->has('namabarang') ? ' has-error' : '' }}">
                                                         Nama Barang
                                                     </div>
                                                     <div class="col-sm-1">
@@ -104,7 +104,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-sm-2 {{ $errors->has('beratasli') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-sm-3 {{ $errors->has('beratasli') ? ' has-error' : '' }}">
                                                         Berat Asli (gram)
                                                     </div>
                                                     <div class="col-sm-3">
@@ -119,7 +119,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-sm-2 {{ $errors->has('beratpembulatan') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-sm-3 {{ $errors->has('beratpembulatan') ? ' has-error' : '' }}">
                                                         Berat RU (gram)
                                                     </div>
                                                     <div class="col-sm-1">
@@ -134,7 +134,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-lg-2 {{ $errors->has('kadar') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-lg-3 {{ $errors->has('kadar') ? ' has-error' : '' }}">
                                                         Kadar
                                                     </div>
                                                     <div class="col-lg-1">
@@ -149,7 +149,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-lg-2 {{ $errors->has('namasupplier') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-lg-3 {{ $errors->has('namasupplier') ? ' has-error' : '' }}">
                                                         Supplier
                                                     </div>
                                                     <div class="col-lg-1">
@@ -164,7 +164,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-lg-2 {{ $errors->has('hargajual') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-lg-3 {{ $errors->has('hargajual') ? ' has-error' : '' }}">
                                                         Harga Jual (gram)
                                                     </div>
                                                     <div class="col-lg-1">
@@ -179,10 +179,10 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-lg-2">
+                                                    <div class="panel-heading col-lg-3">
                                                         Kondisi
                                                     </div>
-                                                    <div class="col-lg-3">
+                                                    <div class="col-lg-5">
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="kondisi[]" value="Baru" checked>Baru
@@ -218,7 +218,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-lg-2 {{ $errors->has('tanggalmasuk') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-lg-3 {{ $errors->has('tanggalmasuk') ? ' has-error' : '' }}">
                                                         Tanggal Masuk
                                                     </div>
                                                     <div class="col-lg-1">
@@ -233,7 +233,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-lg-2 {{ $errors->has('baki') ? ' has-error' : '' }}">
+                                                    <div class="panel-heading col-lg-3 {{ $errors->has('baki') ? ' has-error' : '' }}">
                                                         Baki
                                                     </div>
                                                     <div class="col-lg-3">
@@ -251,7 +251,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="panel-heading col-lg-2">
+                                                    <div class="panel-heading col-lg-3">
                                                         Keterangan
                                                     </div>
                                                     <div class="col-lg-1">
@@ -317,8 +317,8 @@
     var dummycam = Webcam;
     // konfigursi webcam
     Webcam.set({
-        width: 640,
-        height: 480,
+        width: 220,
+        height: 210,
         image_format: 'jpeg',
         jpeg_quality: 100,
         constraints: {
