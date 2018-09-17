@@ -39,16 +39,16 @@
             <div id="page-wrapper">
                 <!-- /.row -->
                 <div class="row" id="page-print">
-                    <div class="col-lg-12">
+                    <div class="col-lg-8">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
+                            <!-- <div class="panel-heading">
                                 TOKO MAS <div style="float: right">Jatibarang - {{ \Carbon\Carbon::parse($transaksi->tanggal)->toFormattedDateString()}}</div><br>
                                 <strong style="font-size: 20px">ARJUNA PUTRA</strong><div style="float: right">KEPADA YTH.</div> <br>
                                 <i>Jual beli perhiasan mas intan dll</i><div style="float: right">Saudara {{$transaksi->nama}}</div><br>
                                 Jl. Raya TImur No. 33 Jatibarang - Brebes<br>
                                 <p class="fa fa-facebook-square"> arjuna putra</p>&nbsp&nbsp&nbsp&nbsp<p class="fa fa-instagram"> tokomasarjunaputrajtb</p>
-                            </div>
-                            <!-- /.panel-heading -->
+                            </div> -->
+                            <br><br><br>
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
                                     <table class="table table-striped table-bordered table-hover">
@@ -62,7 +62,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="odd gradeX" style="background-color: #FFEBCD">
+                                            <tr class="odd gradeX" style="background-color: #fff">
                                                 <td style="text-align: center"><img alt="foto produk" src="{{$transaksi->barangs->foto}}" width="50%" height="50%" /></td>
                                                 <td style="text-align: center">{{$transaksi->barangs->namajenis}}</td>
                                                 <td style="text-align: center">{{$transaksi->barangs->beratpembulatan}} gram</td>
@@ -71,12 +71,8 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="col-lg-4" style="font-size: 10px">
-                                        1. Kondisi dan berat barang telah diperiksa dan diterima dengan baik oleh pembeli <br>
-                                        2. Barang diterima kembali disesuaikan dengan kondisi barang pada saat dijual
-                                    </div>
-                                    <div class="col-lg-2" style="float: right"><strong style="font-size: 16px">Rp {{number_format($transaksi->barangs->totalharga,2,'.',',')}}</strong></div>
-                                    <div class="col-lg-1" style="float: right"><strong style="font-size: 16px">Jumlah</strong></div>
+                                    <div class="col-lg-2" style="float: right"><strong style="font-size: 12px">Rp {{number_format($transaksi->barangs->totalharga,2,'.',',')}}</strong></div>
+                                    <div class="col-lg-1" style="float: right"><strong style="font-size: 12px">Jumlah</strong></div>
                                 </div>
                                 <!-- /.table-responsive -->
                             </div>
